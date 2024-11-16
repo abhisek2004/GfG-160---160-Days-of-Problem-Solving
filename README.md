@@ -1,8 +1,3 @@
-
-Sure! Here's a revised version of the README with plenty of emojis and a more engaging tone:
-
----
-
 # GfG 160 - 160 Days of Problem Solving 🌟🚀
 
 Welcome to my **GitHub repository** where I’m documenting my journey through the **GeeksforGeeks 160 - 160 Days of Problem Solving Challenge**! 🧑‍💻✨
