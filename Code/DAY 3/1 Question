@@ -1,0 +1,70 @@
+## Problem: Rotate an Array to the Left by `d` Steps
+
+### Problem Description:
+
+Given an unsorted array `arr[]`, rotate the array to the left (counter-clockwise direction) by `d` steps, where `d` is a positive integer. Do the rotation **in place**.
+
+### Notes:
+
+- The array is considered **circular**.
+- The rotation should be done in such a way that the first `d` elements move to the end of the array, and the remaining elements shift to the left by `d` positions.
+
+### Examples:
+
+#### Example 1:
+
+**Input:**
+
+```plaintext
+arr[] = [1, 2, 3, 4, 5], d = 2
+```
+
+**Output:**
+
+```plaintext
+[3, 4, 5, 1, 2]
+```
+
+**Explanation:** When rotated by 2 elements, the array becomes `[3, 4, 5, 1, 2]`.
+
+#### Example 2:
+
+**Input:**
+
+```plaintext
+arr[] = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], d = 3
+```
+
+**Output:**
+
+```plaintext
+[8, 10, 12, 14, 16, 18, 20, 2, 4, 6]
+```
+
+**Explanation:** When rotated by 3 elements, the array becomes `[8, 10, 12, 14, 16, 18, 20, 2, 4, 6]`.
+
+#### Example 3:
+
+**Input:**
+
+```plaintext
+arr[] = [7, 3, 9, 1], d = 9
+```
+
+**Output:**
+
+```plaintext
+[3, 9, 1, 7]
+```
+
+**Explanation:** After rotating the array 9 times, we get `[3, 9, 1, 7]` because rotating by the length of the array brings it back to its original state.
+
+### Constraints:
+
+- \(1 \leq \text{arr.size()}, d \leq 10^5\)
+- \(0 \leq \text{arr[i]} \leq 10^5\)
+
+### Requirements:
+
+- Implement the rotation **in place**, without using extra space for another array.
+- The array is circular, meaning that after the last element, it wraps around to the first element.
