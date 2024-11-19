@@ -1,0 +1,62 @@
+### Problem: Next Permutation
+
+**Difficulty**: Medium  
+**Accuracy**: 40.66%  
+**Submissions**: 150K+  
+**Points**: 4
+
+### Problem Statement:
+
+Given an array of integers `arr[]` representing a permutation, implement a function to find the **next permutation** that rearranges the numbers into the lexicographically next greater permutation. If no such permutation exists, rearrange the numbers into the lowest possible order (i.e., sorted in ascending order).
+
+A permutation of an array of integers refers to a specific arrangement of its elements in a sequence or linear order.
+
+### Input:
+
+- An integer array `arr[]` representing a permutation.
+
+### Output:
+
+- Return the next permutation of the array in place.
+
+### Example 1:
+
+**Input**:  
+`arr = [2, 4, 1, 7, 5, 0]`
+
+**Output**:  
+`[2, 4, 5, 0, 1, 7]`
+
+**Explanation**:  
+The next permutation of the given array is `[2, 4, 5, 0, 1, 7]`.
+
+### Example 2:
+
+**Input**:  
+`arr = [3, 2, 1]`
+
+**Output**:  
+`[1, 2, 3]`
+
+**Explanation**:  
+As the array is the last permutation, the next permutation is the lowest one, which is `[1, 2, 3]`.
+
+### Example 3:
+
+**Input**:  
+`arr = [3, 4, 2, 5, 1]`
+
+**Output**:  
+`[3, 4, 5, 1, 2]`
+
+**Explanation**:  
+The next permutation of the given array is `[3, 4, 5, 1, 2]`.
+
+### Constraints:
+
+- `1 ≤ arr.size() ≤ 10^5`
+- `1 ≤ arr[i] ≤ 10^5`
+
+### Note:
+
+- The goal is to implement an **in-place** solution with a time complexity of **O(n)**, where `n` is the size of the array.
