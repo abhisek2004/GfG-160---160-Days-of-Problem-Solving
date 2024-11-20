@@ -1,0 +1,59 @@
+## Problem: Majority Element II
+
+You are given an integer array `arr[]`, where each element represents a vote for a candidate. Your task is to find all the candidates that have more than `n/3` votes, where `n` is the length of the array. Return the candidates in **increasing order**.
+
+If no candidate meets the condition, return an empty array.
+
+### Function Signature:
+
+```python
+def majorityElementII(arr: List[int]) -> List[int]:
+    pass
+```
+
+### Input:
+
+- A list of integers `arr[]` where `1 <= arr.size() <= 10^6` and `-10^9 <= arr[i] <= 10^9`.
+
+### Output:
+
+- A list of integers representing the candidates that appear more than `n/3` times, sorted in increasing order.
+
+### Example 1:
+
+**Input:**
+
+```python
+arr = [2, 1, 5, 5, 5, 5, 6, 6, 6, 6, 6]
+```
+
+**Output:**
+
+```python
+[5, 6]
+```
+
+**Explanation:**
+Both 5 and 6 occur more than `n/3` times, where `n` is 11.
+
+### Example 2:
+
+**Input:**
+
+```python
+arr = [1, 2, 3, 4, 5]
+```
+
+**Output:**
+
+```python
+[]
+```
+
+**Explanation:**
+No candidate appears more than `n/3` times.
+
+### Constraints:
+
+- `1 <= arr.size() <= 10^6`
+- `-10^9 <= arr[i] <= 10^9`
