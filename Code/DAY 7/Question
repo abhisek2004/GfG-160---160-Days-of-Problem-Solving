@@ -1,0 +1,69 @@
+### Problem: **Stock Buy and Sell – Max One Transaction Allowed**
+
+#### Problem Description:
+
+You are given an array `prices[]` of length `n`, where each element represents the price of a stock on a given day. Your task is to determine the maximum profit you can make by performing at most one transaction. A transaction consists of two actions:
+
+- Buy the stock on one day.
+- Sell the stock on a subsequent day.
+
+The goal is to maximize the profit you can achieve by performing a buy and sell operation. If no profit can be made (i.e., the prices are in non-increasing order), return `0`.
+
+#### Constraints:
+
+- The length of the `prices[]` array, `n`, is in the range `1 <= n <= 10^5`.
+- The value of each price, `prices[i]`, is in the range `0 <= prices[i] <= 10^4`.
+
+#### Function Signature:
+
+```python
+def max_profit(prices: List[int]) -> int:
+```
+
+#### Input:
+
+- A list of integers `prices[]` of length `n` (where `1 <= n <= 10^5`), where `prices[i]` represents the price of the stock on day `i`.
+
+#### Output:
+
+- Return an integer representing the maximum profit achievable from at most one transaction, or `0` if no profit is possible.
+
+#### Examples:
+
+**Example 1:**
+
+```python
+prices = [7, 10, 1, 3, 6, 9, 2]
+assert max_profit(prices) == 8
+```
+
+Explanation:
+
+- You can buy the stock on day 2 at price `1` and sell it on day 5 at price `9`, resulting in a profit of `9 - 1 = 8`.
+
+**Example 2:**
+
+```python
+prices = [7, 6, 4, 3, 1]
+assert max_profit(prices) == 0
+```
+
+Explanation:
+
+- The prices are in a strictly decreasing order, so it is not possible to make a profit, hence the result is `0`.
+
+**Example 3:**
+
+```python
+prices = [1, 3, 6, 9, 11]
+assert max_profit(prices) == 10
+```
+
+Explanation:
+
+- The prices are in increasing order, so the maximum profit can be made by buying at price `1` and selling at price `11`, resulting in a profit of `11 - 1 = 10`.
+
+#### Notes:
+
+- You must buy the stock before selling it (i.e., the buy day must be before the sell day).
+- If no profit is possible (i.e., prices are in non-increasing order), return `0`.
