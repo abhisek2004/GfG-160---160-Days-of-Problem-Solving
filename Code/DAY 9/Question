@@ -1,0 +1,70 @@
+### Problem Statement: Kadane's Algorithm
+
+#### Difficulty: Medium
+
+#### Accuracy: 36.28%
+
+#### Submissions: 1M
+
+#### Points: 4
+
+### Problem Description:
+
+Given an integer array `arr[]`, you need to find the **maximum sum** of a **subarray** (contiguous subarray).
+
+A **subarray** is a contiguous portion of the array. Your task is to implement a solution that returns the maximum possible sum of any subarray in the given array.
+
+### Examples:
+
+#### Input 1:
+
+```
+arr[] = [2, 3, -8, 7, -1, 2, 3]
+```
+
+#### Output 1:
+
+```
+11
+```
+
+**Explanation**: The subarray `{7, -1, 2, 3}` has the largest sum 11.
+
+#### Input 2:
+
+```
+arr[] = [-2, -4]
+```
+
+#### Output 2:
+
+```
+-2
+```
+
+**Explanation**: The subarray `{-2}` has the largest sum `-2`.
+
+#### Input 3:
+
+```
+arr[] = [5, 4, 1, 7, 8]
+```
+
+#### Output 3:
+
+```
+25
+```
+
+**Explanation**: The subarray `{5, 4, 1, 7, 8}` has the largest sum `25`.
+
+### Constraints:
+
+- `1 ≤ arr.size() ≤ 10^5`
+- `-10^9 ≤ arr[i] ≤ 10^4`
+
+---
+
+### Objective:
+
+- Implement a solution using **Kadane's Algorithm** to find the maximum sum of a contiguous subarray.
