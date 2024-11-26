@@ -1,0 +1,75 @@
+**Max Circular Subarray Sum**
+
+**Difficulty**: Hard  
+**Accuracy**: 29.37%  
+**Submissions**: 117K+  
+**Points**: 8
+
+### Problem Description:
+
+Given an array of integers `arr[]` arranged in a circular fashion, your task is to find the maximum subarray sum that can be obtained by considering the circular nature of the array.
+
+### Examples:
+
+**Example 1:**
+
+Input:
+
+```
+arr[] = [8, -8, 9, -9, 10, -11, 12]
+```
+
+Output:
+
+```
+22
+```
+
+**Explanation**: The maximum subarray sum can be achieved by starting from the last element (12) and moving in a circular fashion, with the subarray being `[12, 8, -8, 9, -9, 10]`, resulting in a sum of `22`.
+
+---
+
+**Example 2:**
+
+Input:
+
+```
+arr[] = [10, -3, -4, 7, 6, 5, -4, -1]
+```
+
+Output:
+
+```
+23
+```
+
+**Explanation**: The maximum sum of the circular subarray is `23`. The subarray is `[7, 6, 5, -4, -1, 10]`.
+
+---
+
+**Example 3:**
+
+Input:
+
+```
+arr[] = [-1, 40, -14, 7, 6, 5, -4, -1]
+```
+
+Output:
+
+```
+52
+```
+
+**Explanation**: The circular subarray `[7, 6, 5, -4, -1, -1, 40]` has the maximum sum, which is `52`.
+
+---
+
+### Constraints:
+
+- `1 <= arr.size() <= 10^5`
+- `-10^4 <= arr[i] <= 10^4`
+
+### Task:
+
+Write a function `maxCircularSubarraySum(arr: List[int]) -> int` to solve the problem.
