@@ -1,0 +1,64 @@
+## Maximize Number of 1's
+
+**Difficulty:** Medium  
+**Accuracy:** 39.46%  
+**Submissions:** 50K+  
+**Points:** 4
+
+### Problem Statement:
+
+Given a binary array `arr[]` (containing only 0s and 1s) and an integer `k`, you are allowed to flip at most `k` 0s to 1s. Your task is to find the maximum number of consecutive 1s that can be obtained in the array after performing the operation at most `k` times.
+
+### Input:
+
+- A binary array `arr[]` of size `n`, where `1 <= arr.size() <= 10^5`.
+- An integer `k` representing the maximum number of 0s you are allowed to flip to 1s, where `0 <= k <= arr.size()`.
+
+### Output:
+
+- An integer representing the maximum number of consecutive 1s that can be obtained after flipping at most `k` 0s.
+
+### Examples:
+
+**Example 1:**
+
+Input:  
+`arr[] = [1, 0, 1], k = 1`
+
+Output:  
+`3`
+
+Explanation:  
+The maximum subarray of consecutive 1's is of size 3, which can be obtained after flipping the zero present at the 1st index.
+
+---
+
+**Example 2:**
+
+Input:  
+`arr[] = [1, 0, 0, 1, 0, 1, 0, 1], k = 2`
+
+Output:  
+`5`
+
+Explanation:  
+By flipping the zeros at indices 4 and 6, we get the longest subarray from index 3 to 7 containing all 1’s.
+
+---
+
+**Example 3:**
+
+Input:  
+`arr[] = [1, 1], k = 2`
+
+Output:  
+`2`
+
+Explanation:  
+Since the array already has the maximum consecutive 1's, no operation is needed, so the answer is 2.
+
+### Constraints:
+
+- `1 <= arr.size() <= 10^5`
+- `0 <= k <= arr.size()`
+- `0 <= arr[i] <= 1`
