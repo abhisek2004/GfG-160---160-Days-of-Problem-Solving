@@ -1,0 +1,73 @@
+## Split Array in Three Equal Sum Subarrays
+
+**Difficulty:** Medium  
+**Accuracy:** 52.9%  
+**Submissions:** 24K+  
+**Points:** 4
+
+### Problem Statement:
+
+Given an integer array `arr[]`, determine if it is possible to split the array into three consecutive parts such that the sum of each part is equal. If it is possible, return any index pair `(i, j)` such that:
+
+- `sum(arr[0..i]) = sum(arr[i+1..j]) = sum(arr[j+1..n-1])`
+
+If it's not possible, return `{-1, -1}`.
+
+### Note:
+
+- Since multiple answers are possible, return any valid pair of indices.
+- The driver code will print `true` if the solution is correct, otherwise it will print `false`.
+
+### Input:
+
+- An integer array `arr[]` where:
+  - `3 ≤ arr.size() ≤ 10^6`
+  - `0 ≤ arr[i] ≤ 10^6`
+
+### Output:
+
+- If the array can be split into three parts with equal sums, return the indices `i` and `j`. Otherwise, return `{-1, -1}`.
+
+### Examples:
+
+**Example 1:**
+
+Input:  
+`arr[] = [1, 3, 4, 0, 4]`
+
+Output:  
+`true`
+
+Explanation: The array can be split as:
+
+- Subarray `arr[0..1] = [1, 3]` with sum = 4
+- Subarray `arr[2..3] = [4, 0]` with sum = 4
+- Subarray `arr[4..4] = [4]` with sum = 4
+
+Thus, the output is `true`.
+
+---
+
+**Example 2:**
+
+Input:  
+`arr[] = [2, 3, 4]`
+
+Output:  
+`false`
+
+Explanation: No three subarrays exist which have equal sums.
+
+---
+
+**Example 3:**
+
+Input:  
+`arr[] = [0, 1, 1]`
+
+Output:  
+`false`
+
+### Constraints:
+
+- The array contains at least 3 elements.
