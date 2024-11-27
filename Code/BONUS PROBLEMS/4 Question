@@ -1,0 +1,80 @@
+## Last Moment Before All Ants Fall Out of a Plank
+
+**Difficulty:** Medium  
+**Accuracy:** 78.11%  
+**Submissions:** 233+  
+**Points:** 4
+
+### Problem Statement:
+
+We have a wooden plank of length `n` units. Some ants are walking on the plank, each ant moves at a speed of 1 unit per second. Some of the ants move to the left, and others move to the right.
+
+When two ants moving in opposite directions meet at some point, they change directions and continue moving again. Assume that changing directions does not take any additional time. When an ant reaches one end of the plank, it falls off immediately.
+
+Given an integer `n` and two integer arrays `left[]` and `right[]`, where:
+
+- `left[]` contains the positions of ants moving to the left.
+- `right[]` contains the positions of ants moving to the right.
+
+Your task is to return the moment when the last ant(s) fall off the plank.
+
+### Input:
+
+- An integer `n` representing the length of the plank.
+- An integer array `left[]` of positions where ants are moving to the left.
+- An integer array `right[]` of positions where ants are moving to the right.
+
+### Output:
+
+- An integer representing the moment when the last ant(s) fall off the plank.
+
+### Examples:
+
+**Example 1:**
+
+Input:  
+`n = 4, left[] = [2], right[] = [0, 1, 3]`
+
+Output:  
+`4`
+
+Explanation:  
+As seen in the image, the last ant falls off the plank at time `t = 4`.
+
+---
+
+**Example 2:**
+
+Input:  
+`n = 4, left[] = [], right[] = [0, 1, 2, 3, 4]`
+
+Output:  
+`4`
+
+Explanation:  
+All ants are moving to the right. The ant at index 0 takes 7 seconds to fall off the plank.
+
+---
+
+**Example 3:**
+
+Input:  
+`n = 3, left[] = [0], right[] = [3]`
+
+Output:  
+`0`
+
+Explanation:  
+The ants are already at the ends of the plank, so they fall off immediately.
+
+### Constraints:
+
+- `1 <= n <= 10^5`
+- `0 <= left.length <= n + 1`
+- `0 <= left[i] <= n`
+- `0 <= right.length <= n + 1`
+- `0 <= right[i] <= n`
+- `1 <= left.length + right.length <= n + 1`
+- All values in `left` and `right` are unique, and each value can appear only in one of the two arrays.
+
+---
