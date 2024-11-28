@@ -1,0 +1,119 @@
+### Problem: Implement Atoi (String to Integer)
+
+**Difficulty**: Medium  
+**Accuracy**: 32.58%  
+**Submissions**: 218K+  
+**Points**: 4
+
+### Problem Description
+
+Write a function to implement the **atoi()** (ASCII to Integer) function, which converts a string into an integer. The conversion process should follow these steps:
+
+1. **Skip leading whitespaces**.
+2. **Check for a sign** ('+' or '-') at the beginning of the string. If no sign is present, consider it as positive.
+3. **Read digits** and convert them into an integer, ignoring leading zeros. If a non-digit character is encountered, stop reading.
+4. If no digits are found after ignoring leading whitespaces, return **0**.
+5. The resulting integer should be clamped to the 32-bit integer range:
+   - If the integer exceeds **2^31 - 1**, return **2^31 - 1**.
+   - If the integer is less than **-2^31**, return **-2^31**.
+
+### Function Signature:
+
+```python
+def myAtoi(s: str) -> int:
+```
+
+### Constraints:
+
+- 1 ≤ |s| ≤ 15, where |s| is the length of the string.
+
+### Examples:
+
+**Example 1:**
+
+Input:
+
+```python
+s = "-123"
+```
+
+Output:
+
+```python
+-123
+```
+
+Explanation: The string "-123" can be directly converted into the integer -123.
+
+**Example 2:**
+
+Input:
+
+```python
+s = "  -"
+```
+
+Output:
+
+```python
+0
+```
+
+Explanation: No digits are found, so the result is 0.
+
+**Example 3:**
+
+Input:
+
+```python
+s = "1231231231311133"
+```
+
+Output:
+
+```python
+2147483647
+```
+
+Explanation: The integer exceeds **2^31 - 1**. Therefore, return **2147483647**.
+
+**Example 4:**
+
+Input:
+
+```python
+s = "-999999999999"
+```
+
+Output:
+
+```python
+-2147483648
+```
+
+Explanation: The integer is smaller than **-2^31**, so return **-2147483648**.
+
+**Example 5:**
+
+Input:
+
+```python
+s = "  -0012gfg4"
+```
+
+Output:
+
+```python
+-12
+```
+
+Explanation: The string contains the number -12, and reading stops when a non-digit character 'g' is encountered.
+
+### Constraints:
+
+- The string contains only printable ASCII characters (space, digits, signs, etc.).
+- You cannot use any built-in conversion functions (e.g., `int()`, `float()`).
+
+---
+
+This description includes all the necessary components to clearly explain the task for implementation on GitHub.
