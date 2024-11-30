@@ -1,0 +1,53 @@
+### Problem: Anagram Check
+
+**Difficulty:** Easy  
+**Accuracy:** 44.93%  
+**Submissions:** 344K+  
+**Points:** 2
+
+### Problem Statement:
+
+Given two strings `s1` and `s2` consisting of lowercase characters, determine if the two strings are anagrams of each other. An anagram of a string is another string that contains the same characters, but the order of the characters may differ.
+
+**Note:**
+
+- Both strings `s1` and `s2` are guaranteed to be non-empty.
+- Strings `s1` and `s2` will only contain lowercase alphabets.
+
+### Input:
+
+- Two strings, `s1` and `s2` (1 ≤ `s1.size()`, `s2.size()` ≤ 10^5).
+
+### Output:
+
+- Return `true` if the strings `s1` and `s2` are anagrams, otherwise return `false`.
+
+### Examples:
+
+**Example 1:**
+
+```
+Input:  s1 = "geeks", s2 = "kseeg"
+Output: true
+Explanation: Both strings contain the same characters with the same frequency, so they are anagrams.
+```
+
+**Example 2:**
+
+```
+Input:  s1 = "allergy", s2 = "allergic"
+Output: false
+Explanation: The strings contain different characters, so they are not anagrams.
+```
+
+**Example 3:**
+
+```
+Input:  s1 = "g", s2 = "g"
+Output: true
+Explanation: Both strings are identical, so they are trivially anagrams.
+```
+
+### Constraints:
+
+- 1 ≤ `s1.size()`, `s2.size()` ≤ 10^5
