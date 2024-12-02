@@ -1,0 +1,98 @@
+**Search Pattern (KMP Algorithm)**
+
+**Difficulty**: Medium  
+**Accuracy**: 45.04%  
+**Submissions**: 77K+  
+**Points**: 4
+
+**Problem Statement**:
+
+Given two strings: `txt` (the text string) and `pat` (the pattern string), the task is to print the indices of all occurrences of the pattern string in the text string using 0-based indexing.
+
+If there are no occurrences of the pattern string in the text string, return an empty list.
+
+**Function Signature**:
+
+```python
+def KMPSearch(txt: str, pat: str) -> List[int]:
+    pass
+```
+
+**Input**:
+
+- A string `txt` of length \(1 \leq \text{txt.size()} \leq 10^6\), consisting of lowercase English alphabets.
+- A string `pat` of length \(1 \leq \text{pat.size()} < \text{txt.size()}\), consisting of lowercase English alphabets.
+
+**Output**:
+
+- A list of integers representing the 0-based indices where the pattern string `pat` is found in the text string `txt`.
+- If the pattern is not found, return an empty list.
+
+**Example 1**:
+
+**Input**:
+
+```python
+txt = "abcab"
+pat = "ab"
+```
+
+**Output**:
+
+```python
+[0, 3]
+```
+
+**Explanation**: The string "ab" occurs twice in `txt`, once starting at index 0 and another starting at index 3.
+
+---
+
+**Example 2**:
+
+**Input**:
+
+```python
+txt = "abesdu"
+pat = "edu"
+```
+
+**Output**:
+
+```python
+[]
+```
+
+**Explanation**: There's no substring "edu" present in `txt`.
+
+---
+
+**Example 3**:
+
+**Input**:
+
+```python
+txt = "aabaacaadaabaaba"
+pat = "aaba"
+```
+
+**Output**:
+
+```python
+[0, 9, 12]
+```
+
+**Explanation**: The string "aaba" occurs three times in `txt`, at indices 0, 9, and 12.
+
+---
+
+**Constraints**:
+
+- \(1 \leq \text{txt.size()} \leq 10^6\)
+- \(1 \leq \text{pat.size()} < \text{txt.size()}\)
+- Both `txt` and `pat` consist of lowercase English alphabets.
+
+---
+
+**Note**:
+
+- You are required to implement this using the KMP (Knuth-Morris-Pratt) algorithm, which ensures efficient searching with a time complexity of \(O(N + M)\), where `N` is the length of `txt` and `M` is the length of `pat`.
