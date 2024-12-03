@@ -1,0 +1,29 @@
+### Problem Statement: Min Chars to Add for Palindrome
+
+Given a string `s`, the task is to find the minimum number of characters that need to be added at the front of the string to make it a palindrome.
+
+A **palindrome** is a string that reads the same forward and backward.
+
+### Examples:
+
+**Input 1:**  
+`s = "abc"`
+
+**Output 1:**  
+`2`
+
+**Explanation:**  
+Add 'b' and 'c' at the front of the string to make it a palindrome: `"cbabc"`
+
+**Input 2:**  
+`s = "aacecaaaa"`
+
+**Output 2:**  
+`2`
+
+**Explanation:**  
+Add 2 'a's at the front of the string to make it a palindrome: `"aaaacecaaaa"`
+
+### Constraints:
+
+- `1 <= s.size() <= 10^6`
