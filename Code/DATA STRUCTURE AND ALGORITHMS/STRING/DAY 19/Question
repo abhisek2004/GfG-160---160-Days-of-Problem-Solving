@@ -1,0 +1,84 @@
+### Problem: Strings Rotations of Each Other
+
+**Difficulty**: Easy  
+**Accuracy**: 43.83%  
+**Submissions**: 207K+  
+**Points**: 2
+
+### Description:
+
+You are given two strings `s1` and `s2` of equal lengths. The task is to check if `s2` is a rotated version of the string `s1`.
+
+#### Note:
+
+- The characters in the strings are in lowercase.
+- A string `s2` is a rotated version of string `s1` if it can be obtained by rotating `s1` either to the left or right.
+
+### Input:
+
+- `s1` (1 <= s1.size() <= 10^5): A string of lowercase characters.
+- `s2` (1 <= s2.size() <= 10^5): A string of lowercase characters.
+
+### Output:
+
+- Return `true` if `s2` is a rotated version of `s1`, otherwise return `false`.
+
+### Example 1:
+
+**Input**:
+
+```
+s1 = "abcd", s2 = "cdab"
+```
+
+**Output**:
+
+```
+true
+```
+
+**Explanation**: After 2 right rotations, `s1` will become equal to `s2`.
+
+### Example 2:
+
+**Input**:
+
+```
+s1 = "aab", s2 = "aba"
+```
+
+**Output**:
+
+```
+true
+```
+
+**Explanation**: After 1 left rotation, `s1` will become equal to `s2`.
+
+### Example 3:
+
+**Input**:
+
+```
+s1 = "abcd", s2 = "acbd"
+```
+
+**Output**:
+
+```
+false
+```
+
+**Explanation**: Strings are not rotations of each other.
+
+### Constraints:
+
+- 1 <= s1.size(), s2.size() <= 10^5
+
+### Task:
+
+Implement a function to check if `s2` is a rotated version of `s1`.
+
+---
+
+This problem tests your understanding of string manipulation and the properties of string rotations. A common approach would involve using string concatenation to simulate rotations efficiently.
