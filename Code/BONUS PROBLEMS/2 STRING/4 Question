@@ -1,0 +1,38 @@
+### Minimum Repeat to Make Substring
+
+**Problem Statement:**
+
+Given two strings `s1` and `s2`, return the minimum number of times `s1` has to be repeated such that `s2` becomes a substring of the repeated string. If `s2` can never be a substring of any number of repetitions of `s1`, return `-1`.
+
+### Input:
+
+- A string `s1` (1 ≤ `s1.size()` ≤ 10^5).
+- A string `s2` (1 ≤ `s2.size()` ≤ 10^5).
+
+### Output:
+
+- Return the minimum number of times `s1` has to be repeated such that `s2` is a substring of the repeated string. If `s2` cannot be a substring, return `-1`.
+
+### Examples:
+
+**Example 1:**
+
+- Input: `s1 = "ww", s2 = "www"`
+- Output: `2`
+- Explanation: Repeating `s1` two times `"wwww"`, `s2` is a substring of it.
+
+**Example 2:**
+
+- Input: `s1 = "abcd", s2 = "cdabcdab"`
+- Output: `3`
+- Explanation: Repeating `s1` three times `"abcdabcdabcd"`, `s2` becomes a substring of it.
+
+**Example 3:**
+
+- Input: `s1 = "ab", s2 = "cab"`
+- Output: `-1`
+- Explanation: No matter how many times we repeat `s1`, `s2` can never be a substring.
+
+### Constraints:
+
+- `1 ≤ s1.size(), s2.size() ≤ 10^5`
