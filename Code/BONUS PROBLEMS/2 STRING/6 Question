@@ -1,0 +1,39 @@
+### Integer to Words
+
+**Problem Statement:**
+
+Write a function that converts a given integer `n` into words using the International Number System. The number should be broken down into smaller groups of three digits (hundreds, tens, and ones), and each group should be converted into words.
+
+### Input:
+
+- An integer `n` where `0 ≤ n ≤ 2^31 - 1`.
+
+### Output:
+
+- Return the number `n` as a string in English words.
+
+### Examples:
+
+**Example 1:**
+
+- Input: `n = 0`
+- Output: `"Zero"`
+
+**Example 2:**
+
+- Input: `n = 123`
+- Output: `"One Hundred Twenty Three"`
+
+**Example 3:**
+
+- Input: `n = 10245`
+- Output: `"Ten Thousand Two Hundred Forty Five"`
+
+**Example 4:**
+
+- Input: `n = 2147483647`
+- Output: `"Two Billion One Hundred Forty Seven Million Four Hundred Eighty Three Thousand Six Hundred Forty Seven"`
+
+### Constraints:
+
+- `0 ≤ n ≤ 2^31 - 1`
