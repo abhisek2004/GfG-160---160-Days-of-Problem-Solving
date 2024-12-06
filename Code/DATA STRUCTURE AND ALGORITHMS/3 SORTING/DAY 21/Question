@@ -1,0 +1,78 @@
+### **Find H-Index**
+
+**Difficulty**: Medium  
+**Accuracy**: 53.4%  
+**Submissions**: 15K+  
+**Points**: 4
+
+---
+
+**Problem Statement**:
+
+You are given an integer array `citations[]`, where `citations[i]` represents the number of citations the researcher received for their `i`-th paper. Your task is to find the **H-index** of the researcher.
+
+**H-Index** is the largest value `H` such that the researcher has at least `H` papers with at least `H` citations each.
+
+---
+
+### **Examples**:
+
+#### Input 1:
+
+```python
+citations = [3, 0, 5, 3, 0]
+```
+
+#### Output 1:
+
+```python
+3
+```
+
+#### Explanation:
+
+There are at least 3 papers (3, 5, 3) with at least 3 citations.
+
+#### Input 2:
+
+```python
+citations = [5, 1, 2, 4, 1]
+```
+
+#### Output 2:
+
+```python
+2
+```
+
+#### Explanation:
+
+There are 3 papers (with citation counts of 5, 2, and 4) that have at least 2 citations. However, the H-index cannot be 3 because there aren't 3 papers with 3 or more citations.
+
+#### Input 3:
+
+```python
+citations = [0, 0]
+```
+
+#### Output 3:
+
+```python
+0
+```
+
+---
+
+### **Constraints**:
+
+- `1 ≤ citations.size() ≤ 10^6`
+- `0 ≤ citations[i] ≤ 10^6`
+
+---
+
+### **Function Signature**:
+
+```python
+def find_h_index(citations: List[int]) -> int:
+    pass
+```
