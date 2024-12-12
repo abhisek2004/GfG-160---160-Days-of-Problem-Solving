@@ -1,0 +1,67 @@
+### Problem: Number of Occurrences
+
+**Difficulty:** Easy  
+**Accuracy:** 59.34%  
+**Submissions:** 256K+  
+**Points:** 2
+
+---
+
+**Problem Statement:**
+
+Given a sorted array `arr[]` and a number `target`, you need to find the number of occurrences of the `target` in the array `arr[]`.
+
+### Input:
+
+- A sorted array `arr[]` of integers.
+- A target integer `target`.
+
+### Output:
+
+- The number of occurrences of the `target` in the array `arr[]`.
+
+### Examples:
+
+**Example 1:**
+
+Input:  
+`arr[] = [1, 1, 2, 2, 2, 2, 3]`, `target = 2`
+
+Output:  
+`4`
+
+Explanation: `target = 2` occurs 4 times in the given array.
+
+**Example 2:**
+
+Input:  
+`arr[] = [1, 1, 2, 2, 2, 2, 3]`, `target = 4`
+
+Output:  
+`0`
+
+Explanation: `target = 4` is not present in the given array.
+
+**Example 3:**
+
+Input:  
+`arr[] = [8, 9, 10, 12, 12, 12]`, `target = 12`
+
+Output:  
+`3`
+
+Explanation: `target = 12` occurs 3 times in the given array.
+
+---
+
+### Constraints:
+
+- `1 ≤ arr.size() ≤ 10^6`
+- `1 ≤ arr[i] ≤ 10^6`
+- `1 ≤ target ≤ 10^6`
+
+---
+
+### Notes:
+
+- The array `arr[]` is sorted in non-decreasing order.
