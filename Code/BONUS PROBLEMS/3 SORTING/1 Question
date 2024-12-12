@@ -1,0 +1,90 @@
+# Minimum Sum of Two Numbers
+
+## Problem Statement
+
+Given an array `arr[]` where each element is an integer in the range [0 - 9], find the minimum possible sum of two numbers formed by using all the digits in the array. The elements of the array should be used to form the two numbers, and you must return the sum as a string without any leading zeroes.
+
+### Input:
+
+- An array `arr[]` where each element is an integer in the range [0 - 9]. The array has a size between 1 and \(10^6\), i.e., \(1 \leq \text{arr.size()} \leq 10^6\).
+
+### Output:
+
+- A string representing the minimum sum of two numbers formed by using all digits from the array. The result should not have leading zeros.
+
+### Examples:
+
+**Example 1:**
+
+Input:
+
+```python
+arr = [6, 8, 4, 5, 2, 3]
+```
+
+Output:
+
+```python
+"604"
+```
+
+Explanation:  
+The minimum sum is formed by numbers `358` and `246`. Their sum is `604`.
+
+**Example 2:**
+
+Input:
+
+```python
+arr = [5, 3, 0, 7, 4]
+```
+
+Output:
+
+```python
+"82"
+```
+
+Explanation:  
+The minimum sum is formed by numbers `35` and `047`. Their sum is `82`.
+
+**Example 3:**
+
+Input:
+
+```python
+arr = [9, 4]
+```
+
+Output:
+
+```python
+"13"
+```
+
+Explanation:  
+The minimum sum is formed by numbers `9` and `4`. Their sum is `13`.
+
+### Constraints:
+
+- \(1 \leq \text{arr.size()} \leq 10^6\)
+- \(0 \leq arr[i] \leq 9\)
+
+### Task:
+
+Write a function that returns the minimum possible sum of two numbers formed using the digits from the input array.
+
+### Function Signature:
+
+```python
+def minimum_sum(arr: List[int]) -> str:
+    pass
+```
+
+### Hint:
+
+- Sort the digits in ascending order and carefully assign them to two numbers such that their sum is minimized.
+
+---
+
+You can now implement the function and test it with various test cases!
