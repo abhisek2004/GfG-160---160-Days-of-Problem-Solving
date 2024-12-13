@@ -1,0 +1,81 @@
+**Title**: Form the Largest Number
+
+**Difficulty**: Medium  
+**Accuracy**: 37.82%  
+**Submissions**: 163K+  
+**Points**: 4
+
+**Problem Statement**:
+
+You are given an array of non-negative integers `arr[]`. Your task is to arrange these numbers such that when concatenated, they form the largest possible number. Since the result may be very large, return it as a string.
+
+### Function Signature:
+
+```python
+def largest_number(arr: List[int]) -> str:
+    pass
+```
+
+### Input:
+
+- A list `arr[]` containing `n` integers where `1 ≤ arr.size() ≤ 10^5` and `0 ≤ arr[i] ≤ 10^5`.
+
+### Output:
+
+- Return a string representing the largest number that can be formed by concatenating the elements of the array.
+
+### Example 1:
+
+**Input**:
+
+```python
+arr = [3, 30, 34, 5, 9]
+```
+
+**Output**:
+
+```python
+"9534330"
+```
+
+**Explanation**:  
+Given numbers are [3, 30, 34, 5, 9]. The arrangement "9534330" gives the largest value.
+
+### Example 2:
+
+**Input**:
+
+```python
+arr = [54, 546, 548, 60]
+```
+
+**Output**:
+
+```python
+"6054854654"
+```
+
+**Explanation**:  
+Given numbers are [54, 546, 548, 60]. The arrangement "6054854654" gives the largest value.
+
+### Example 3:
+
+**Input**:
+
+```python
+arr = [3, 4, 6, 5, 9]
+```
+
+**Output**:
+
+```python
+"96543"
+```
+
+**Explanation**:  
+Given numbers are [3, 4, 6, 5, 9]. The arrangement "96543" gives the largest value.
+
+### Constraints:
+
+- The size of the array is between `1` and `10^5`.
+- Each number in the array is between `0` and `10^5`.
