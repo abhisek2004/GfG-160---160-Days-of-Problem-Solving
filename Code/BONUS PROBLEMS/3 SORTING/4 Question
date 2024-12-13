@@ -1,0 +1,81 @@
+**Title**: Make Array Elements Unique
+
+**Difficulty**: Medium  
+**Accuracy**: 51.43%  
+**Submissions**: 59K+  
+**Points**: 4
+
+**Problem Statement**:
+
+Given an integer array `arr[]`, your task is to find the minimum number of increment operations required to make all the array elements unique. In one operation, a value can be incremented by 1 only. No value in the array should occur more than once.
+
+### Function Signature:
+
+```python
+def make_elements_unique(arr: List[int]) -> int:
+    pass
+```
+
+### Input:
+
+- A list `arr[]` containing `n` integers where `1 ≤ arr.size() ≤ 10^6` and `0 ≤ arr[i] ≤ 10^6`.
+
+### Output:
+
+- Return an integer representing the minimum number of operations required to make all elements in the array unique.
+
+### Example 1:
+
+**Input**:
+
+```python
+arr = [3, 2, 1, 2, 1, 7]
+```
+
+**Output**:
+
+```python
+6
+```
+
+**Explanation**:  
+After 6 moves, the array could be [3, 4, 1, 2, 5, 7]. It is impossible to make all elements unique with fewer than 6 operations.
+
+### Example 2:
+
+**Input**:
+
+```python
+arr = [1, 2, 2]
+```
+
+**Output**:
+
+```python
+1
+```
+
+**Explanation**:  
+After one operation, [2 -> 3], the array becomes [1, 2, 3], making all elements unique.
+
+### Example 3:
+
+**Input**:
+
+```python
+arr = [5, 4, 3, 2, 1]
+```
+
+**Output**:
+
+```python
+0
+```
+
+**Explanation**:  
+All elements are already unique, so no operations are needed.
+
+### Constraints:
+
+- The size of the array is between `1` and `10^6`.
+- Each number in the array is between `0` and `10^6`.
