@@ -1,0 +1,85 @@
+**Title**: Sorted and Rotated Minimum
+
+**Difficulty**: Easy  
+**Accuracy**: 40.57%  
+**Submissions**: 113K+  
+**Points**: 2
+
+**Problem Statement**:  
+You are given a sorted array `arr[]` (which may contain duplicates) that has been rotated at an unknown point. Your task is to find the minimum element in the array.
+
+### Function Signature:
+
+```python
+def find_minimum(arr: List[int]) -> int:
+    pass
+```
+
+### Input:
+
+- A list `arr[]` containing `n` integers where `1 ≤ arr.size() ≤ 10^6` and `1 ≤ arr[i] ≤ 10^9`.
+
+### Output:
+
+- Return the minimum element in the array.
+
+### Example 1:
+
+**Input**:
+
+```python
+arr = [5, 6, 1, 2, 3, 4]
+```
+
+**Output**:
+
+```python
+1
+```
+
+**Explanation**:  
+1 is the minimum element in the array.
+
+### Example 2:
+
+**Input**:
+
+```python
+arr = [3, 2, 2, 2]
+```
+
+**Output**:
+
+```python
+2
+```
+
+**Explanation**:  
+Here, 2 is the minimum element.
+
+### Example 3:
+
+**Input**:
+
+```python
+arr = [4, 4, 4]
+```
+
+**Output**:
+
+```python
+4
+```
+
+**Explanation**:  
+Here, 4 is the only element in the array.
+
+### Constraints:
+
+- The array size is between `1` and `10^6` elements.
+- Each element in the array is between `1` and `10^9`.
+
+### Note:
+
+- The array is sorted, but it may have been rotated.
+- The array may contain duplicate values.
