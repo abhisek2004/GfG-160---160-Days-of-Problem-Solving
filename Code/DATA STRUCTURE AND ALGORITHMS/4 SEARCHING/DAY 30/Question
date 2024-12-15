@@ -1,0 +1,67 @@
+# Peak Element in an Array
+
+## Problem Statement:
+
+Given an array `arr[]` where no two adjacent elements are the same, find the index of a **peak element**. An element is considered to be a peak if it is greater than its adjacent elements (if they exist). If there are multiple peak elements, return the index of any one of them.
+
+**Note:** Consider the element before the first element and the element after the last element to be **negative infinity**.
+
+### Function Signature:
+
+```python
+def find_peak_element(arr: List[int]) -> int:
+    # Function to find the index of peak element
+```
+
+## Input:
+
+- An integer array `arr[]` where no two adjacent elements are the same.
+- Size of the array `n` will be between 1 and \(10^6\) (inclusive).
+- Array elements range between \(-2^{31}\) and \(2^{31} - 1\).
+
+## Output:
+
+- Return the **index** of any peak element in the array.
+- If the index returned by your function is correct, output "true"; otherwise, output "false".
+
+### Constraints:
+
+- \(1 \leq arr.size() \leq 10^6\)
+- \(-2^{31} \leq arr[i] \leq 2^{31} - 1\)
+
+---
+
+## Example Walkthrough:
+
+**Example 1:**
+
+```python
+arr = [1, 2, 4, 5, 7, 8, 3]
+```
+
+- **Output:** `True`
+- Explanation: `arr[5] = 8` is a peak element because `arr[4] < arr[5] > arr[6]`.
+
+**Example 2:**
+
+```python
+arr = [10, 20, 15, 2, 23, 90, 80]
+```
+
+- **Output:** `True`
+- Explanation: `arr[1] = 20` and `arr[5] = 90` are peak elements because `arr[0] < arr[1] > arr[2]` and `arr[4] < arr[5] > arr[6]`.
+
+**Example 3:**
+
+```python
+arr = [1, 2, 3]
+```
+
+- **Output:** `True`
+- Explanation: `arr[2] = 3` is a peak element because it is the last element, and it has negative infinity to its right.
+
+---
+
+## Note:
+
+- The first and last elements of the array can also be peak elements if they are greater than their only adjacent element.
