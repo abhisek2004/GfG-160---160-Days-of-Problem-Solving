@@ -1,0 +1,53 @@
+**Aggressive Cows**  
+Difficulty: Medium | Accuracy: 59.57% | Submissions: 93K+ | Points: 4
+
+**Problem Statement**:  
+You are given an array `stalls[]`, where each element represents the position of a stall, and an integer `k` that denotes the number of aggressive cows. Your task is to assign the `k` cows to the stalls such that the minimum distance between any two cows is maximized.
+
+### Input:
+
+- An array `stalls[]` of unique elements representing the positions of the stalls.
+- An integer `k` representing the number of cows.
+
+### Output:
+
+Return the maximum possible minimum distance between any two cows.
+
+### Example 1:
+
+**Input**:  
+`stalls[] = [1, 2, 4, 8, 9]`, `k = 3`  
+**Output**:  
+`3`  
+**Explanation**:  
+The first cow can be placed at `stalls[0]` (position 1),  
+the second cow can be placed at `stalls[2]` (position 4),  
+and the third cow can be placed at `stalls[3]` (position 8).  
+The minimum distance between cows is 3, which is the largest possible minimum distance.
+
+### Example 2:
+
+**Input**:  
+`stalls[] = [10, 1, 2, 7, 5]`, `k = 3`  
+**Output**:  
+`4`  
+**Explanation**:  
+The first cow can be placed at `stalls[0]` (position 10),  
+the second cow can be placed at `stalls[1]` (position 1),  
+and the third cow can be placed at `stalls[4]` (position 5).  
+The minimum distance between cows is 4.
+
+### Example 3:
+
+**Input**:  
+`stalls[] = [2, 12, 11, 3, 26, 7]`, `k = 5`  
+**Output**:  
+`1`  
+**Explanation**:  
+Each cow can be placed in any of the stalls, as the number of stalls is exactly equal to the number of cows. The minimum distance between cows is 1.
+
+### Constraints:
+
+- `2 <= stalls.size() <= 10^6`
+- `0 <= stalls[i] <= 10^8`
+- `1 <= k <= stalls.size()`
