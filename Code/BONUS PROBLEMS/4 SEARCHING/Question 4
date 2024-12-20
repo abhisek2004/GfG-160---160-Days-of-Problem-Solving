@@ -1,0 +1,50 @@
+**Problem: Square Root**
+
+**Difficulty**: Easy  
+**Accuracy**: 54.03%  
+**Submissions**: 285K+  
+**Points**: 2
+
+### Problem Statement:
+
+Given a positive integer `n`, find the square root of `n`. If `n` is not a perfect square, return the **floor value** of the square root.
+
+The **floor value** of any number is the greatest integer which is less than or equal to that number.
+
+### Input:
+
+- A positive integer `n`.
+
+### Output:
+
+- The square root of `n`, or the floor of the square root if `n` is not a perfect square.
+
+### Examples:
+
+**Example 1:**
+
+```
+Input: n = 4
+Output: 2
+Explanation: Since 4 is a perfect square, its square root is 2.
+```
+
+**Example 2:**
+
+```
+Input: n = 11
+Output: 3
+Explanation: Since 11 is not a perfect square, the floor value of the square root of 11 is 3.
+```
+
+**Example 3:**
+
+```
+Input: n = 1
+Output: 1
+Explanation: The square root of 1 is 1, and it is a perfect square.
+```
+
+### Constraints:
+
+- `1 ≤ n ≤ 3 x 10^4`
