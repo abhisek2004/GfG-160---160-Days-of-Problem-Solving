@@ -1,0 +1,56 @@
+**Problem: Bitonic Point**
+
+**Difficulty**: Easy  
+**Accuracy**: 58.67%  
+**Submissions**: 133K+  
+**Points**: 2
+
+### Problem Statement:
+
+Given an array of integers `arr[]` that is first strictly increasing and then may be strictly decreasing, find the **bitonic point**, which is the maximum element in the array.
+
+The **bitonic point** is the point before which elements are strictly increasing and after which elements are strictly decreasing.
+
+### Input:
+
+- A list `arr[]` of integers, where the list is first strictly increasing and then maybe strictly decreasing.
+
+### Output:
+
+- The bitonic point (the maximum element) in the array.
+
+### Examples:
+
+**Example 1:**
+
+```
+Input: arr[] = [1, 2, 4, 5, 7, 8, 3]
+Output: 8
+Explanation: Elements before 8 are strictly increasing [1, 2, 4, 5, 7] and elements after 8 are strictly decreasing [3].
+```
+
+**Example 2:**
+
+```
+Input: arr[] = [10, 20, 30, 40, 50]
+Output: 50
+Explanation: Elements before 50 are strictly increasing [10, 20, 30, 40], and there are no elements after 50.
+```
+
+**Example 3:**
+
+```
+Input: arr[] = [120, 100, 80, 20, 0]
+Output: 120
+Explanation: There are no elements before 120, and elements after 120 are strictly decreasing [100, 80, 20, 0].
+```
+
+### Constraints:
+
+- `3 ≤ arr.size() ≤ 10^5`
+- `1 ≤ arr[i] ≤ 10^6`
+
+### Notes:
+
+- The array is first strictly increasing and then may be strictly decreasing.
+- You need to find the bitonic point efficiently.
