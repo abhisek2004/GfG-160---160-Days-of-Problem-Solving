@@ -1,0 +1,58 @@
+**Problem: Implement Lower Bound**
+
+**Difficulty**: Easy  
+**Accuracy**: 54.97%  
+**Submissions**: 1K+  
+**Points**: 2
+
+### Problem Statement:
+
+Given a sorted array `arr[]` and a number `target`, the task is to find the **lower bound** of the target in this given array. The **lower bound** of a number is defined as the smallest index in the sorted array where the element is greater than or equal to the given number.
+
+If all the elements in the given array are smaller than the target, the lower bound will be the length of the array.
+
+### Input:
+
+- A sorted array `arr[]` of integers.
+- An integer `target`.
+
+### Output:
+
+- The smallest index where the element in the array is greater than or equal to the target.
+
+### Examples:
+
+**Example 1:**
+
+```
+Input:  arr[] = [2, 3, 7, 10, 11, 11, 25], target = 9
+Output: 3
+Explanation: 3 is the smallest index in arr[] where the element (arr[3] = 10) is greater than or equal to 9.
+```
+
+**Example 2:**
+
+```
+Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 11
+Output: 4
+Explanation: 4 is the smallest index in arr[] where the element (arr[4] = 11) is greater than or equal to 11.
+```
+
+**Example 3:**
+
+```
+Input: arr[] = [2, 3, 7, 10, 11, 11, 25], target = 100
+Output: 7
+Explanation: As no element in arr[] is greater than 100, return the length of array, which is 7.
+```
+
+### Constraints:
+
+- `1 ≤ arr.size() ≤ 10^6`
+- `1 ≤ arr[i] ≤ 10^6`
+- `1 ≤ target ≤ 10^6`
+
+### Notes:
+
+- The array is sorted in non-decreasing order.
+- You should implement an efficient algorithm to solve this problem.
