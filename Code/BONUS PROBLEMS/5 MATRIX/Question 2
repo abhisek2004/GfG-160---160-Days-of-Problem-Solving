@@ -1,0 +1,75 @@
+**Problem: Create a Spiral Matrix of N x M size from a given array**
+
+**Difficulty**: Medium  
+**Accuracy**: 79.96%  
+**Submissions**: 526+  
+**Points**: 4
+
+You are given two positive integers `n` and `m`, representing the number of rows and columns of a matrix. You are also given an integer array `arr[]` containing a total of `n * m` elements. Your task is to return a 2D matrix of dimensions `n x m` filled in a clockwise spiral order using the elements from the given array.
+
+### Example 1:
+
+**Input**:
+
+```
+n = 4, m = 4
+arr[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+```
+
+**Output**:
+
+```
+[
+    [1, 2, 3, 4],
+    [12, 13, 14, 5],
+    [11, 16, 15, 6],
+    [10, 9, 8, 7]
+]
+```
+
+### Example 2:
+
+**Input**:
+
+```
+n = 3, m = 4
+arr[] = [1, 8, 6, 3, 8, 6, 1, 6, 3, 2, 5, 3]
+```
+
+**Output**:
+
+```
+[
+    [1, 8, 6, 3],
+    [2, 5, 3, 8],
+    [3, 6, 1, 6]
+]
+```
+
+### Example 3:
+
+**Input**:
+
+```
+n = 2, m = 2
+arr[] = [1, 8, 6, 3]
+```
+
+**Output**:
+
+```
+[
+    [1, 8],
+    [3, 6]
+]
+```
+
+### Constraints:
+
+- `1 ≤ n, m ≤ 10^3`
+- `arr.size() = n * m`
+- `1 ≤ arr[i] ≤ 10^3`
+
+---
+
+Your task is to implement a function that creates the spiral matrix as described above.
