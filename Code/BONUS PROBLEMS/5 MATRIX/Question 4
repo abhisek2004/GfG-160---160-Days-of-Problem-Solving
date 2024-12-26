@@ -1,0 +1,74 @@
+**Problem: Make Matrix Beautiful**
+
+**Difficulty**: Medium  
+**Accuracy**: 64.75%  
+**Submissions**: 55K+  
+**Points**: 4
+
+A **beautiful matrix** is a matrix in which the sum of the elements in each row and column is the same. Given a square matrix `mat[][]`, the task is to find the minimum number of operations required to make the matrix beautiful.
+
+In one operation, you can increment the value of any one cell by 1.
+
+### Objective:
+
+You need to return the minimum number of operations to make the sum of all rows and columns equal in a square matrix.
+
+### Example 1:
+
+**Input**:
+
+```
+mat[][] = [[1, 2], [3, 4]]
+```
+
+**Output**:
+
+```
+4
+```
+
+**Explanation**:
+Increment the value of `mat[0][0]` by 3 and `mat[0][1]` by 1. Now, the row sums are 8, and the column sums are 8.
+
+### Example 2:
+
+**Input**:
+
+```
+mat[][] = [[1, 2, 3], [4, 2, 3], [3, 2, 1]]
+```
+
+**Output**:
+
+```
+6
+```
+
+**Explanation**:
+Increment the value of `mat[0][0]` by 1, `mat[0][1]` by 2, `mat[2][1]` by 1, and `mat[2][2]` by 2. Now, the row sums are 9, and the column sums are 9.
+
+### Example 3:
+
+**Input**:
+
+```
+mat[][] = [[0, 2], [3, 4]]
+```
+
+**Output**:
+
+```
+5
+```
+
+**Explanation**:
+Increment the value of `mat[0][0]` by 4 and `mat[0][1]` by 1. Now, the row sums are 5, and the column sums are 5.
+
+### Constraints:
+
+- `1 ≤ mat.size(), mat[0].size() ≤ 500`
+- `1 ≤ mat[i][j] ≤ 10^6`
+
+---
+
+Your task is to implement a function that finds the minimum number of operations to make the matrix beautiful.
