@@ -1,0 +1,61 @@
+To solve the problem of rotating a square matrix by 180 degrees counterclockwise in place, here's the approach:
+
+### Approach:
+
+1. **Transpose the Matrix**: First, we reverse the rows of the matrix.
+2. **Reverse Each Row**: After transposing, we need to reverse each row to get the 180-degree rotated matrix.
+
+### Steps:
+
+1. Reverse the order of rows in the matrix.
+2. Reverse the elements in each row.
+
+### Solution:
+
+```python
+def rotate(mat):
+    n = len(mat)
+
+    # Step 1: Reverse the rows of the matrix
+    mat.reverse()
+
+    # Step 2: Reverse each row
+    for i in range(n):
+        mat[i].reverse()
+
+    return mat
+```
+
+### Example:
+
+#### Input:
+
+```python
+mat = [
+    [1, 2],
+    [3, 4]
+]
+```
+
+#### Execution:
+
+1. Reverse the rows: `[[3, 4], [1, 2]]`
+2. Reverse each row: `[[4, 3], [2, 1]]`
+
+#### Output:
+
+```python
+[[4, 3],
+ [2, 1]]
+```
+
+### Time Complexity:
+
+- Reversing the rows takes `O(n)`.
+- Reversing each row also takes `O(n)` for each of the `n` rows, leading to an overall time complexity of `O(n^2)`.
+
+### Space Complexity:
+
+- The algorithm is done in place, so the space complexity is `O(1)`.
+
+This approach efficiently rotates the matrix by 180 degrees in place.
