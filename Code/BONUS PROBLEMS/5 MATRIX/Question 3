@@ -1,0 +1,77 @@
+**Problem: Generate a Matrix with Each Row and Column of Given Sum**
+
+**Difficulty**: Easy  
+**Accuracy**: 87.16%  
+**Submissions**: 437+  
+**Points**: 2
+
+You are given two integer arrays, `rowSum[]` and `colSum[]`, representing the sum of each row and each column of a 2D matrix. Your task is to construct a 2D matrix of size `n x m` such that:
+
+- The sum of the matrix elements in the `i`-th row equals `rowSum[i]`
+- The sum of the matrix elements in the `j`-th column equals `colSum[j]`
+
+**Note**:
+
+- There may be multiple valid matrices satisfying the condition, so you can return any valid solution.
+- The problem guarantees that a solution is always possible.
+
+### Example 1:
+
+**Input**:
+
+```
+rowSum[] = [5, 7, 10]
+colSum[] = [8, 6, 8]
+```
+
+**Output**:
+
+```
+true
+```
+
+Explanation: One valid matrix could be:
+
+```
+[[0, 5, 0],
+ [6, 1, 0],
+ [2, 0, 8]]
+```
+
+- Row sums are 5, 7, and 10.
+- Column sums are 8, 6, and 8.
+
+### Example 2:
+
+**Input**:
+
+```
+rowSum[] = [1, 0]
+colSum[] = [1]
+```
+
+**Output**:
+
+```
+true
+```
+
+Explanation: One valid matrix could be:
+
+```
+[[1],
+ [0]]
+```
+
+- Row sums are 1 and 0.
+- Column sum is 1.
+
+### Constraints:
+
+- `1 ≤ n, m ≤ 10^3`
+- `1 ≤ rowSum[i] ≤ 10^3`
+- `1 ≤ colSum[i] ≤ 10^3`
+
+---
+
+Your task is to implement a function that generates and returns a 2D matrix that satisfies the given row and column sums.
