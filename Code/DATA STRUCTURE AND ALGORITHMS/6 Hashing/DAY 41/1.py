@@ -1,42 +1,28 @@
-# {
-# Driver Code Starts
-# Initial Template for Python 3
-
-import math
-
-
-# } Driver Code Ends
-from collections import defaultdict
-
-
 class Solution:
-    def countPairs(self, arr, target):
-        ans = 0
-        mm = defaultdict(int)
-        for x in arr:
-            if target - x in mm:
-                ans += mm[target - x]
-            mm[x] += 1
-        return ans
-
-# {
- # Driver Code Starts.
+    def twoSum(self, arr, target):
+        seen = set()
+        for num in arr:
+            complement = target - num
+            if complement in seen:
+                return True
+            seen.add(num)
+        return False
 
 
 def main():
     T = int(input())
-    while (T > 0):
-
-        A = [int(x) for x in input().strip().split()]
-
-        k = int(input())
+    while T > 0:
+        x = int(input())
+        arr = list(map(int, input().strip().split()))
         ob = Solution()
-        print(ob.countPairs(A, k))
-        print('~')
+        ans = ob.twoSum(arr, x)
+        if ans:
+            print("true")
+        else:
+            print("false")
         T -= 1
+        print("~")
 
 
 if __name__ == "__main__":
     main()
-
-# } Driver Code Ends

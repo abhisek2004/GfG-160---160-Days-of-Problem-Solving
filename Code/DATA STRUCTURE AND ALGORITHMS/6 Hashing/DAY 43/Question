@@ -1,0 +1,55 @@
+To solve the problem of finding all triplets with zero sum in an array, we can use the **two-pointer technique** after sorting the array. This will help reduce the time complexity compared to a brute force approach.
+
+### Approach:
+
+1. **Sort the array**: Sorting will help in efficiently finding triplets.
+2. **Iterate through the array**: For each element in the array, use two pointers to find pairs that sum to the negative of the current element.
+3. **Two-pointer technique**: After fixing one element, the two-pointer technique helps find two numbers whose sum equals the negative of the current element. This is done by initializing one pointer at the next element (left pointer) and the other at the end of the array (right pointer). Move the pointers inward depending on the sum of the elements they point to.
+4. **Skip duplicates**: To ensure that we don't return duplicate triplets, skip repeated elements as you progress through the array.
+
+### Steps:
+
+1. Sort the array.
+2. Loop through the array using a fixed index `i`. For each element, treat it as the first element of the triplet.
+3. Use two pointers (`left` and `right`) to find pairs that sum to `-arr[i]`.
+4. If a valid triplet is found, add it to the result list.
+5. Skip duplicates at each step to avoid duplicate triplets.
+
+### Explanation of Code:
+
+- **Sorting**: The array is sorted at the beginning. This ensures that the two-pointer approach can be applied efficiently.
+- **Outer loop**: This loops through the array, treating each element `arr[i]` as the first element of the triplet.
+- **Two-pointer technique**: For each element, the `left` pointer starts from `i + 1` and the `right` pointer starts from the end of the array. We check if the sum of `arr[i] + arr[left] + arr[right]` is zero.
+  - If it's zero, we've found a valid triplet and we move both pointers inward to find other potential pairs.
+  - If the sum is less than zero, we move the `left` pointer to the right to increase the sum.
+  - If the sum is greater than zero, we move the `right` pointer to the left to decrease the sum.
+- **Skipping duplicates**: We skip over elements that are the same as the previous one to avoid counting duplicate triplets.
+
+### Example Walkthrough:
+
+1. **Input**: `[0, -1, 2, -3, 1]`
+
+   - Sort the array: `[-3, -1, 0, 1, 2]`
+   - Start with `i = 0`, element `-3`. The two pointers (`left = 1`, `right = 4`) help find the pair `(-1, 2)`, resulting in the triplet `[-3, -1, 2]`.
+   - Continue with `i = 1`, element `-1`, find the pair `(0, 1)` resulting in the triplet `[-1, 0, 1]`.
+   - Result: `[[0, 1, 4], [2, 3, 4]]`
+
+2. **Input**: `[1, -2, 1, 0, 5]`
+
+   - Sort the array: `[-2, 0, 1, 1, 5]`
+   - The only triplet found is `[1, -2, 1]`, which results in `[[0, 1, 2]]`.
+
+3. **Input**: `[2, 3, 1, 0, 5]`
+   - Sort the array: `[0, 1, 2, 3, 5]`
+   - No triplet sum equals zero.
+   - Result: `[[]]`.
+
+### Time Complexity:
+
+- Sorting the array takes \(O(n \log n)\).
+- The two-pointer loop runs in \(O(n^2)\) since for each element `i`, we perform a linear scan with two pointers.
+  Thus, the overall time complexity is \(O(n^2)\).
+
+### Space Complexity:
+
+- The space complexity is \(O(1)\) if we don't count the space required for the result list (which is \(O(k)\), where \(k\) is the number of triplets found).

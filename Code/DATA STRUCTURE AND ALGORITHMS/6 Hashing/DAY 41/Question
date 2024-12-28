@@ -1,81 +1,25 @@
-### Problem Statement: Count Pairs with Given Sum
+**Two Sum - Pair with Given Sum**
 
 **Difficulty**: Easy  
-**Accuracy**: 50.11%  
-**Submissions**: 31K+  
+**Accuracy**: 30.61%  
+**Submissions**: 326K+  
 **Points**: 2
 
-You are given an array `arr[]` and an integer `target`. Your task is to count the number of pairs of elements in the array that sum up to the given `target`.
+**Problem Statement**:  
+Given an array `arr[]` of positive integers and another integer `target`, determine if there exists two distinct indices such that the sum of the elements at these indices is equal to the `target`.
 
-### Input:
+**Examples**:
 
-- An integer array `arr[]` of size `n` (1 ≤ n ≤ 10^5).
-- An integer `target` (1 ≤ target ≤ 10^4).
+- **Input**: `arr[] = [1, 4, 45, 6, 10, 8]`, `target = 16`  
+  **Output**: `true`  
+  **Explanation**: `arr[3] + arr[4] = 6 + 10 = 16`.
 
-### Output:
+- **Input**: `arr[] = [1, 2, 4, 3, 6]`, `target = 11`  
+  **Output**: `false`  
+  **Explanation**: None of the pairs make a sum of 11.
 
-- The number of pairs in the array that sum up to the given `target`.
+**Constraints**:
 
-### Example 1:
-
-**Input**:
-
-```
-arr[] = [1, 5, 7, -1, 5], target = 6
-```
-
-**Output**:
-
-```
-3
-```
-
-**Explanation**:
-
-- Pairs with sum 6 are: (1, 5), (7, -1), and (1, 5).
-
----
-
-### Example 2:
-
-**Input**:
-
-```
-arr[] = [1, 1, 1, 1], target = 2
-```
-
-**Output**:
-
-```
-6
-```
-
-**Explanation**:
-
-- Pairs with sum 2 are: (1, 1), (1, 1), (1, 1), (1, 1), (1, 1), (1, 1).
-
----
-
-### Example 3:
-
-**Input**:
-
-```
-arr[] = [10, 12, 10, 15, -1], target = 125
-```
-
-**Output**:
-
-```
-0
-```
-
-**Explanation**:
-
-- There are no pairs that sum to 125 in the array.
-
-### Constraints:
-
-- `1 <= arr.size() <= 10^5`
-- `-10^4 <= arr[i] <= 10^4`
-- `1 <= target <= 10^4`
+- `1 ≤ arr.size ≤ 10^5`
+- `1 ≤ arr[i] ≤ 10^5`
+- `1 ≤ target ≤ 2*10^5`
