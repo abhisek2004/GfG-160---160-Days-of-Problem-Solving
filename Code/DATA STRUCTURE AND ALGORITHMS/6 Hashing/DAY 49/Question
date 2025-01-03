@@ -1,0 +1,65 @@
+**Count Subarrays with Given XOR**
+
+**Difficulty:** Medium  
+**Accuracy:** 58.86%  
+**Submissions:** 13K+  
+**Points:** 4
+
+---
+
+### Problem Description:
+
+Given an array of integers `arr[]` and a number `k`, count the number of subarrays whose XOR of elements equals `k`.
+
+### Input:
+
+- An array `arr[]` of integers.
+- A number `k` (0 ≤ k ≤ 10^5).
+
+### Output:
+
+- The number of subarrays where the XOR of their elements is equal to `k`.
+
+### Example 1:
+
+**Input:**  
+`arr[] = [4, 2, 2, 6, 4], k = 6`
+
+**Output:**  
+`4`
+
+**Explanation:**  
+The subarrays having XOR of their elements as 6 are:  
+`[4, 2]`, `[4, 2, 2, 6, 4]`, `[2, 2, 6]`, and `[6]`.
+
+### Example 2:
+
+**Input:**  
+`arr[] = [5, 6, 7, 8, 9], k = 5`
+
+**Output:**  
+`2`
+
+**Explanation:**  
+The subarrays having XOR of their elements as 5 are:  
+`[5]`, `[5, 6, 7, 8, 9]`.
+
+### Example 3:
+
+**Input:**  
+`arr[] = [1, 1, 1, 1], k = 0`
+
+**Output:**  
+`4`
+
+**Explanation:**  
+The subarrays with XOR 0 are:  
+`[1, 1]`, `[1, 1]`, `[1, 1]`, and `[1, 1, 1, 1]`.
+
+---
+
+### Constraints:
+
+- 1 ≤ arr.size() ≤ 10^5
+- 0 ≤ arr[i] ≤ 10^5
+- 0 ≤ k ≤ 10^5
