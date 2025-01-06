@@ -1,0 +1,47 @@
+**Min Subsets with Consecutive Numbers**
+
+**Difficulty**: Easy  
+**Accuracy**: 52.29%  
+**Submissions**: 12K+  
+**Points**: 2
+
+Given an array of distinct positive numbers, the task is to calculate the minimum number of subsets (or subsequences) from the array such that each subset contains consecutive numbers.
+
+### Example 1:
+
+Input: `arr[] = [100, 56, 5, 6, 102, 58, 101, 57, 7, 103]`  
+Output: 3  
+Explanation: The subsets with consecutive numbers are:
+
+- {5, 6, 7}
+- {56, 57, 58}
+- {100, 101, 102, 103}  
+  Hence, the answer is 3.
+
+### Example 2:
+
+Input: `arr[] = [10, 100, 105]`  
+Output: 3  
+Explanation: The subsets with consecutive numbers are:
+
+- {10}
+- {100}
+- {105}  
+  Hence, the answer is 3.
+
+### Task:
+
+Write a function to calculate the minimum number of subsets where each subset contains consecutive numbers from the given array.
+
+### Constraints:
+
+- 1 ≤ `arr.size()` ≤ 10^5
+- 0 ≤ `arr[i]` ≤ 10^6
+
+### Expected Time Complexity:
+
+- O(n \* log(n))
+
+### Expected Auxiliary Space:
+
+- O(1)
