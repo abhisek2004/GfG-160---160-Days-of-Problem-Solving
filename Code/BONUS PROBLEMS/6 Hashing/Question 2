@@ -1,0 +1,35 @@
+**Max Distance Between Same Elements**
+
+**Difficulty**: Easy  
+**Accuracy**: 46.67%  
+**Submissions**: 72K+  
+**Points**: 2
+
+Given an array `arr[]`, the task is to find the maximum distance between two occurrences of the same element. If no element has two occurrences, return 0.
+
+### Example 1:
+
+Input: `arr[] = [1, 1, 2, 2, 2, 1]`  
+Output: 5  
+Explanation: The distance for element 1 is: 5 - 0 = 5, and for element 2 is: 4 - 2 = 2. So the maximum distance is 5.
+
+### Example 2:
+
+Input: `arr[] = [3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2]`  
+Output: 10  
+Explanation: The maximum distance for element 2 is 11 - 1 = 10, for element 1 is 4 - 2 = 2, and for element 4 is 10 - 5 = 5. So the maximum distance is 10.
+
+### Example 3:
+
+Input: `arr[] = [1, 2, 3, 6, 5, 4]`  
+Output: 0  
+Explanation: No element has two occurrences, so the maximum distance is 0.
+
+### Task:
+
+Write a function to find the maximum distance between two occurrences of an element in the given array.
+
+### Constraints:
+
+- 1 <= `arr.size()` <= 10^6
+- 1 <= `arr[i]` <= 10^9
