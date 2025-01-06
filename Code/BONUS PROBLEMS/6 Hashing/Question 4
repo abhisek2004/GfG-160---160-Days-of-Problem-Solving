@@ -1,0 +1,46 @@
+**4 Sum – Count Quadruplets with Given Sum**
+
+**Difficulty**: Medium  
+**Accuracy**: 24.14%  
+**Submissions**: 1K+  
+**Points**: 4
+
+Given an array `arr[]` and an integer `target`, you need to find and return the count of quadruplets such that:
+
+- The indices of each element of the quadruplet are unique.
+- The sum of the elements is equal to the given `target`.
+
+### Example 1:
+
+Input: `arr[] = [1, 5, 3, 1, 2, 10]`, `target = 20`  
+Output: 1  
+Explanation: The only quadruplet satisfying the condition is:  
+arr[1] + arr[2] + arr[4] + arr[5] = 5 + 3 + 2 + 10 = 20. Hence, the answer is 1.
+
+### Example 2:
+
+Input: `arr[] = [1, 1, 1, 1, 1]`, `target = 4`  
+Output: 5  
+Explanation: Five quadruplets with sum 4 are:
+
+- arr[0] + arr[1] + arr[2] + arr[3] = 1 + 1 + 1 + 1 = 4
+- arr[1] + arr[2] + arr[3] + arr[4] = 1 + 1 + 1 + 1 = 4
+- arr[0] + arr[2] + arr[3] + arr[4] = 1 + 1 + 1 + 1 = 4
+- arr[0] + arr[1] + arr[3] + arr[4] = 1 + 1 + 1 + 1 = 4
+- arr[0] + arr[1] + arr[2] + arr[4] = 1 + 1 + 1 + 1 = 4
+
+### Example 3:
+
+Input: `arr[] = [4, 3, -13, 3]`, `target = -3`  
+Output: 1  
+Explanation: There is only 1 quadruplet with sum = -3, that is [4, 3, -13, 3].
+
+### Task:
+
+Write a function to find the count of quadruplets whose sum equals the given target.
+
+### Constraints:
+
+- 1 <= `arr.length` <= 10^3
+- -10^5 <= `arr[i]` <= 10^5
+- -10^5 <= `target` <= 10^5
