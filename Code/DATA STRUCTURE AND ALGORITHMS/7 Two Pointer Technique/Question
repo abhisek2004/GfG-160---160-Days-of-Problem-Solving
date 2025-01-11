@@ -1,0 +1,35 @@
+**Longest Substring with Distinct Characters**  
+**Difficulty**: Easy  
+**Accuracy**: 31.32%  
+**Submissions**: 142K+  
+**Points**: 2
+
+Given a string `s`, find the length of the longest substring with all distinct characters.
+
+### Examples
+
+**Input**:  
+`s = "geeksforgeeks"`  
+**Output**:  
+`7`  
+**Explanation**:  
+The substring `"eksforg"` is the longest substring with all distinct characters.
+
+**Input**:  
+`s = "aaa"`  
+**Output**:  
+`1`  
+**Explanation**:  
+The substring `"a"` is the longest substring with all distinct characters.
+
+**Input**:  
+`s = "abcdefabcbb"`  
+**Output**:  
+`6`  
+**Explanation**:  
+The longest substring with all distinct characters is `"abcdef"`, which has a length of 6.
+
+### Constraints
+
+- \(1 \leq s.size() \leq 3 \times 10^4\)
+- All characters are lowercase English alphabets.
