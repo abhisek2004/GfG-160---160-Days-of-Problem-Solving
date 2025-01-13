@@ -1,0 +1,40 @@
+**4 Sum - All Quadruples**  
+**Difficulty**: Medium  
+**Accuracy**: 19.94%  
+**Submissions**: 200K+  
+**Points**: 4
+
+Given an array `arr[]` of integers and another integer `target`, find all unique quadruples from the given array that sum up to `target`. The quadruples should be sorted internally, i.e., for any quadruple `[q1, q2, q3, q4]`, it should satisfy:  
+`q1 <= q2 <= q3 <= q4`.
+
+### Examples
+
+**Input**:  
+`arr[] = [0, 0, 2, 1, 1]`, `target = 3`  
+**Output**:  
+`[[0, 0, 1, 2]]`  
+**Explanation**:  
+The quadruple `[0, 0, 1, 2]` has a sum equal to 3.
+
+**Input**:  
+`arr[] = [10, 2, 3, 4, 5, 7, 8]`, `target = 23`  
+**Output**:  
+`[[2, 3, 8, 10], [2, 4, 7, 10], [3, 5, 7, 8]]`  
+**Explanation**:
+
+- Sum of `[2, 3, 8, 10]` is 23.
+- Sum of `[2, 4, 7, 10]` is 23.
+- Sum of `[3, 5, 7, 8]` is 23.
+
+**Input**:  
+`arr[] = [0, 0, 2, 1, 1]`, `target = 2`  
+**Output**:  
+`[[0, 0, 1, 1]]`  
+**Explanation**:  
+The quadruple `[0, 0, 1, 1]` has a sum equal to 2.
+
+### Constraints
+
+- \(1 \leq arr.size() \leq 200\)
+- \(-10^6 \leq target \leq 10^6\)
+- \(-10^6 \leq arr[i] \leq 10^6\)
