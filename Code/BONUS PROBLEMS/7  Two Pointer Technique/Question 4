@@ -1,0 +1,80 @@
+**Subarrays With At Most K Distinct Integers**  
+**Difficulty**: Medium  
+**Accuracy**: 74.14%  
+**Submissions**: 89+  
+**Points**: 4
+
+You are given an array `arr[]` of positive integers and an integer `k`. The task is to find the number of subarrays in `arr[]` where the count of distinct integers is at most `k`.
+
+---
+
+### Examples
+
+**Example 1**:  
+**Input**:  
+`arr[] = [1, 2, 2, 3]`  
+`k = 2`  
+**Output**:  
+`9`  
+**Explanation**:  
+Subarrays with at most 2 distinct elements are:  
+`[1]`, `[2]`, `[2]`, `[3]`, `[1, 2]`, `[2, 2]`, `[2, 3]`, `[1, 2, 2]`, `[2, 2, 3]`.
+
+---
+
+**Example 2**:  
+**Input**:  
+`arr[] = [1, 1, 1]`  
+`k = 1`  
+**Output**:  
+`6`  
+**Explanation**:  
+Subarrays with at most 1 distinct element are:  
+`[1]`, `[1]`, `[1]`, `[1, 1]`, `[1, 1]`, `[1, 1, 1]`.
+
+---
+
+**Example 3**:  
+**Input**:  
+`arr[] = [1, 2, 1, 1, 3, 3, 4, 2, 1]`  
+`k = 2`  
+**Output**:  
+`24`  
+**Explanation**:  
+There are 24 subarrays with at most 2 distinct elements.
+
+---
+
+### Constraints
+
+- \(1 \leq arr.size() \leq 10^4\)
+- \(1 \leq k \leq arr.size()\)
+- \(1 \leq arr[i] \leq arr.size()\)
+
+---
+
+### Approach
+
+1. **Two Pointer/Sliding Window Technique**:  
+   The main idea is to use a sliding window to count the number of subarrays with at most `k` distinct integers:
+
+   - Use a hash map (or dictionary) to store the frequency of integers in the current window.
+   - Expand the window by moving the right pointer and update the frequency count.
+   - If the number of distinct integers exceeds `k`, move the left pointer to reduce the size of the window until the distinct count is within the limit.
+   - Count the number of valid subarrays ending at each position.
+
+2. **Formula**:  
+   Count subarrays with at most `k` distinct integers and subtract the count of subarrays with at most `k-1` distinct integers to get the count of subarrays with exactly `k` distinct integers.
+
+   The final count is:
+
+   ```python
+   count_at_most_k(arr, k) - count_at_most_k(arr, k-1)
+   ```
+
+---
+
+### Time Complexity
+
+- **Time**: \(O(n)\), where \(n\) is the size of the array, as we traverse the array with two pointers.
+- **Space**: \(O(k)\), using extra space for the hash map to track the frequency of elements.
