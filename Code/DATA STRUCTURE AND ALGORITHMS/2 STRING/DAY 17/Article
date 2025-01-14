@@ -1,0 +1,30 @@
+Find first non-repeating character of given string
+
+Given a string s of lowercase English letters, the task is to find the first non-repeating character. If there is no such character, return '$'.
+
+Examples:
+
+Input: s = "geeksforgeeks"
+Output: 'f'
+Explanation: 'f' is the first character in the string which does not repeat.
+
+Input: s = "racecar"
+Output: 'e'
+Explanation: 'e' is the only character in the string which does not repeat.
+
+Input: "aabbccc"
+Output: '$'
+Explanation: All the characters in the given string are repeating.
+
+Table of Content
+
+[Naive Approach] Using Two Nested Loops
+[Efficient Approach 1] Using Frequency Array (Two Traversal)
+[Efficient Approach 2] By Storing Indices (Single Traversal)
+[Naive Approach] Using Two Nested Loops
+The idea is to use two nested loops, the outer loop for picking an element and the inner loop for finding another occurrence of the picked character in the string. As soon as we find a character which has only one occurrence in the input string, return it. If all characters have multiple occurrences, return '$'.
+
+Output
+e
+Time Complexity: O(n), where n is the length of input string s.
+Auxiliary Space: O(MAX_CHAR), where MAX_CHAR = 26 as the input string will have only lowercase alphabets.
