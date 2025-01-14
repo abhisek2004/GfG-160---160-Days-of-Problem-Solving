@@ -1,0 +1,34 @@
+Next Permutation
+
+Given an array arr[] of size n, the task is to print the lexicographically next greater permutation of the given array. If there does not exist any greater permutation, then find the lexicographically smallest permutation of the given array.
+
+Let us understand the problem better by writing all permutations of [1, 2, 4] in lexicographical order
+
+[1, 2, 4], [1, 4, 2], [2, 1, 4], [2, 4, 1], [4, 1, 2] and [4, 2, 1]
+
+If we give any of the above (except the last) as input, we need to find the next one in sequence. If we give last as input, we need to return the first one.
+
+Examples:
+
+Input: arr = [2, 4, 1, 7, 5, 0]
+Output: [2, 4, 5, 0, 1, 7]
+Explanation: The next permutation of the given array is 2 4 5 0 1 7
+
+Input: arr = {3, 2, 1]
+Output: [1, 2, 3]
+Explanation: As arr[] is the last permutation. So, the next permutation is the lowest one.
+
+Table of Content
+
+[Naive Approach] Generating All - O(n!*n*log(n!)) Time and Space
+[Expected Approach] Generating Only Next - O(n) Time and O(1) Space
+Using C++ in-built function
+[Naive Approach] Generating All Permutations - O(n!*n*log(n!)) Time and O(n!) Space
+The very basic idea that comes to our mind is that we would first generate all possible permutations of a given array and sort them. Once sorted, we locate the current permutation within this list. The next permutation is simply the next arrangement in the sorted order. If the current arrangement is the last in the list then display the first permutation (smallest permutation).
+
+Note: This approach will work only when there are no duplicated in the input array. Please refer the expected approach to handle duplicates.
+
+Output
+2 4 5 0 1 7
+Time Complexity: O(n), where n is the size of the given array.
+Auxiliary Space: O(1), The algorithm performs in-place operations (modifying the array directly) without using extra space proportional to the input size.
