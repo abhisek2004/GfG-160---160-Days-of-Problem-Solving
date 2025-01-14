@@ -1,0 +1,23 @@
+Count Inversions of an Array
+
+Given an integer array arr[] of size n, find the inversion count in the array. Two array elements arr[i] and arr[j] form an inversion if arr[i] > arr[j] and i < j.
+
+Note: Inversion Count for an array indicates that how far (or close) the array is from being sorted. If the array is already sorted, then the inversion count is 0, but if the array is sorted in reverse order, the inversion count is maximum. 
+
+Examples: 
+
+Input: arr[] = {4, 3, 2, 1}
+Output: 6
+Explanation:
+
+[caption width="800"]
+
+Output
+6
+Note: The above code modifies (or sorts) the input array. If we want to count only inversions, we need to create a copy of the original array and perform operation on the copy array.
+
+You may like to see:
+
+Count inversions in an array | Set 2 (Using Self-Balancing BST) 
+Counting Inversions using Set in C++ STL 
+Count inversions in an array | Set 3 (Using BIT)
