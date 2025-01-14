@@ -1,0 +1,70 @@
+### **Equilibrium Point**
+
+**Difficulty**: Easy  
+**Accuracy**: 28.13%  
+**Submissions**: 609K+  
+**Points**: 2
+
+---
+
+### **Problem Statement**
+
+You are given an array of integers `arr[]`. The task is to find the first equilibrium point in the array.
+
+An **equilibrium point** is defined as an index (0-based indexing) such that the sum of all elements before that index is equal to the sum of elements after it.
+
+If no such point exists, return `-1`.
+
+---
+
+### **Examples**
+
+#### Example 1
+
+**Input**:  
+`arr[] = [1, 2, 0, 3]`  
+**Output**:  
+`2`  
+**Explanation**:  
+Sum of elements to the left of index `2` is `1 + 2 = 3` and the sum to the right is `0 + 3 = 3`.
+
+---
+
+#### Example 2
+
+**Input**:  
+`arr[] = [1, 1, 1, 1]`  
+**Output**:  
+`-1`  
+**Explanation**:  
+There is no equilibrium index in the array.
+
+---
+
+#### Example 3
+
+**Input**:  
+`arr[] = [-7, 1, 5, 2, -4, 3, 0]`  
+**Output**:  
+`3`  
+**Explanation**:  
+Sum of elements to the left of index `3` is `-7 + 1 + 5 = -1` and the sum to the right is `-4 + 3 + 0 = -1`.
+
+---
+
+### **Constraints**
+
+- \(3 \leq arr.size() \leq 10^6\)
+- \(-10^9 \leq arr[i] \leq 10^9\)
+
+---
+
+### **Key Observations**
+
+1. A brute-force solution involves checking all indices with left and right sums, but this is inefficient for large arrays.
+2. An efficient solution uses prefix sums:
+   - Calculate the total sum of the array.
+   - Iterate through the array while keeping a running left sum.
+   - At each index, the right sum is `total sum - left sum - arr[i]`.
+   - Check if left sum equals right sum at each step.
+3. The approach runs in **O(n)** time, suitable for the given constraints.
