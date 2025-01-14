@@ -25,3 +25,7 @@ Table of Content
 [Naive Approach] By exploring all possible pairs - O(n^2) Time and O(1) Space
 The idea is to use two nested loops to explore all the possible ways to buy and sell stock. The outer loop decides the day to buy the stock and the inner loop decides the day to sell the stock. The maximum difference between the selling price and buying price between every pair of days will be our answer.
 
+Output
+8
+Time Complexity: O(n), as we are traversing the prices[] array only once.
+Auxiliary Space: O(1)
