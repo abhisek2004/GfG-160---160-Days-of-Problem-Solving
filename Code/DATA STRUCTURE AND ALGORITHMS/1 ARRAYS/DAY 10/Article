@@ -1,0 +1,34 @@
+Maximum Subarray Sum - Kadane's Algorithm
+
+Given an array arr[], the task is to find the subarray that has the maximum sum and return its sum.
+
+Examples:
+
+Input: arr[] = {2, 3, -8, 7, -1, 2, 3}
+Output: 11
+Explanation: The subarray {7, -1, 2, 3} has the largest sum 11.
+
+Input: arr[] = {-2, -4}
+Output: -2
+Explanation: The subarray {-2} has the largest sum -2.
+
+Input: arr[] = {5, 4, 1, 7, 8}
+Output: 25
+Explanation: The subarray {5, 4, 1, 7, 8} has the largest sum 25.
+
+Table of Content
+
+[Naive Approach] By iterating over all subarrays - O(n^2) Time and O(1) Space
+[Expected Approach] Using Kadane's Algorithm - O(n) Time and O(1) Space
+[Naive Approach] By iterating over all subarrays - O(n^2) Time and O(1) Space
+The idea is to run two nested loops to iterate over all possible subarrays and find the maximum sum. The outer loop will mark the starting point of a subarray and inner loop will mark the ending point of the subarray.
+
+Output
+11
+Time Complexity: O(n), since we are traversing the array only one time.
+Auxiliary Space: O(1)
+
+Related Articles:
+
+Print the Maximum Sum Subarray
+Maximum Product Subarray
