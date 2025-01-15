@@ -1,0 +1,27 @@
+Subarray with Given Sum
+
+Given a 1-based indexing array arr[] of non-negative integers and an integer sum. You mainly need to return the left and right indexes(1-based indexing) of that subarray. In case of multiple subarrays, return the subarray indexes which come first on moving from left to right. If no such subarray exists return an array consisting of element -1.
+
+Examples: 
+
+Input: arr[] = [15, 2, 4, 8, 9, 5, 10, 23], target = 23
+Output: [2, 5]
+Explanation: Sum of subarray arr[2...5] is 2 + 4 + 8 + 9 = 23.
+
+Input: arr[] = [1, 10, 4, 0, 3, 5], target = 7
+Output: [3, 5]
+Explanation: Sum of subarray arr[3...5] is 4 + 0 + 3 = 7.
+
+Input: arr[] = [1, 4], target = 0
+Output: [-1]
+Explanation: There is no subarray with 0 sum.
+
+Table of Content
+
+[Naive Approach] Using Nested loop - O(n2) Time and O(1) Space
+[Expected Approach] Sliding Window - O(n) Time and O(1) Space
+[Alternate Approach] Hashing + Prefix Sum - O(n) Time and O(n) Space
+[Naive Approach] Using Nested loop - O(n^2) Time and O(1) Space
+The very basic idea is to use a nested loop where the outer loop picks a starting element, and the inner loop calculates the cumulative sum of elements starting from this element.
+
+For each starting element, the inner loop iterates through subsequent elements and adding each element to the cumulative sum until the given sum is found or the end of the array is reached. If at any point the cumulative sum equals the given sum, then return starting and ending indices (1-based). If no such sub-array is found after all iterations, then return -1.
