@@ -1,0 +1,36 @@
+K-th Element of Merged Two Sorted Arrays
+
+Given two sorted arrays of sizes m and n respectively, the task is to find the element that would be at the k-th position in the final sorted array formed by merging these two arrays.
+
+Examples: 
+
+Input: a[] = [2, 3, 6, 7, 9], b[] = [1, 4, 8, 10], k = 5
+Output: 6
+Explanation: The final sorted array is [1, 2, 3, 4, 6, 7, 8, 9, 10]. The 5th element is 6.
+
+Input: a[] = [100, 112, 256, 349, 770], b[] = [72, 86, 113, 119, 265, 445, 892], k = 7
+Output: 256
+Explanation: The final sorted array is [72, 86, 100, 112, 113, 119, 256, 265, 349, 445, 770, 892]. The 7th element is 256.
+
+Table of Content
+
+Using Sorting - O((m + n) * log(m + n)) Time and O(m + n) Space
+Using Priority Queue - O(m + n + k*log(m + n)) Time and O(m + n) Space
+Using Merge Step of Merge Sort - O(m + n) Time and O(m + n) Space
+Using Optimized Merge of Merge Sort - O(k) Time and O(1) Space
+Using Binary Search - O(log(min(n, m)) Time and O(1) Space
+Using Sorting - O((m + n) * log(m + n)) Time and O(m + n) Space
+The idea is to create a new array by merging elements from both arrays (a[] and b[]), then sort the new array, and finally return the kth smallest element from the sorted array.
+
+Using Priority Queue - O(m + n + k*log(m + n)) Time and O(m + n) Space
+Build a MIN Heap containing all elements of a[] and b[]. This would take O(m + n) time.
+Extract elements from MIN heap and the kth extracted item is the kth smallest of the merged array. This would take O(k*log(m + n)) time.
+To know more about the implementation refer: Kth smallest element in an array
+
+Using Merge Step of Merge Sort - O(m + n) Time and O(m + n) Space
+The basic idea here is to merge the given two arrays into a single sorted array and then simply return the element at the kth position. This approach is straightforward because it directly uses the merging process of two sorted arrays, similar to the merge step in the merge sort algorithm.
+
+We initialize three pointers: two pointers to traverse each array and one to keep track of the position in the merged array. By comparing the elements pointed to by the two array pointers, we place the smaller element into the merged array and move the respective pointer forward. This continues until one of the arrays is fully traversed. If any elements remain in either array, they are directly appended to the merged array. Finally, the k-th element of this merged array is returned.
+
+
+
