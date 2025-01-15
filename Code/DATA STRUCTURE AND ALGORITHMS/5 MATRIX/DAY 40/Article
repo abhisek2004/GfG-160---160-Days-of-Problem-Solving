@@ -1,0 +1,33 @@
+Search element in a sorted matrix
+
+Given a sorted matrix mat[][] of size nxm and an element x, the task is to find if x is present in the matrix or not. Matrix is sorted in a way such that all elements in a row are sorted in increasing order and for row i, where 1 <= i <= n-1, the first element of row i is greater than or equal to the last element of row i-1.
+
+Examples:
+
+Input: x = 14, mat[][] = [[ 1, 5, 9],
+[14, 20, 21],
+[30, 34, 43]]
+Output: true
+
+Input: x = 42, mat[][] = [[ 1, 5, 9, 11],
+[14, 20, 21, 26],
+[30, 34, 43, 50]]
+Output: false
+
+Table of Content
+
+[Naive Approach] Comparing with all elements – O(n*m) Time and O(1) Space
+[Better Approach] Using Binary Search Twice - O(logn + logm) Time and O(1) Space
+[Expected Approach] Using Binary Search Once - O(log(n*m)) and O(1) Space
+[Naive Approach] Comparing with all elements – O(n*m) Time and O(1) Space
+In this approach, we will iterate through the entire matrix mat[][] and compare each element with x. If an element matches the x, we will return true. Otherwise, at the end of the traversal, we will return false. Please refer to Searching Algorithms for 2D Arrays (Matrix) to know more about the implementation.
+
+[Better Approach] Using Binary Search Twice - O(logn + logm) Time and O(1) Space
+First, we locate the row where the target x might be by using binary search, and then we apply binary search again within that row.
+
+To find the correct row, we perform binary search on the first elements of the middle row.
+Start with low = 0 and high = n - 1.
+
+If x is smaller than the first element of the middle row (a[mid][0]), then x will be smaller than all elements in rows >= mid, so update high = mid - 1.
+If x is greater than the first element of the middle row (a[mid][0]), then x will be greater than all elements in rows < mid, so store the current mid row and update low = mid + 1.
+Once we have found the correct row, we can apply binary search within that row to search for the target element x.
