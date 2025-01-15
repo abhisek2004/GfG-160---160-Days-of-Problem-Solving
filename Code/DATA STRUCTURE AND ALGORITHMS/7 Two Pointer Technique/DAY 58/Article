@@ -1,0 +1,32 @@
+Longest Substring Without Repeating Characters
+
+Given a string s having lowercase characters, find the length of the longest substring without repeating characters. 
+
+Examples:
+
+Input: s = "geeksforgeeks"
+Output: 7
+Explanation: The longest substrings without repeating characters are "eksforg” and "ksforge", with lengths of 7.
+
+Input: s = "aaa"
+Output: 1
+Explanation: The longest substring without repeating characters is "a"
+
+Input: s = "abcdefabcbb"
+Output: 6
+Explanation: The longest substring without repeating characters is "abcdef".
+
+Table of Content
+
+[Naive Approach] Consider Substrings Starting From Every Index
+[Expected Approach - 1] Using Sliding Window of Distinct Characters
+[Expected Approach - 2] Using Last Index of Each Character
+[Naive Approach] Consider Substrings Starting From Every Index
+The idea is to find length of longest substring with distinct characters starting from every index and maximum of all such lengths will be our answer.
+
+To find the length of the longest substring with distinct characters starting from an index, we create a new visited array of size = MAX_CHAR = 26 to keep track of included characters in the substring. vis[0] checks for 'a', vis[1] checks for 'b', vis[2] checks for 'c' and so on.
+
+Note the MAX_CHAR is alphabet size of input characters which is typically a constant. If we have only lower case characters, then MAX_CHAR is 26 only. If we consider all ASCII characters, then MAX_CHAR is 256.
+
+
+
