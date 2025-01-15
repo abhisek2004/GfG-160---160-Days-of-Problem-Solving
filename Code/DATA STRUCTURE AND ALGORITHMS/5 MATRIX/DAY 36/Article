@@ -1,0 +1,30 @@
+Print a given matrix in spiral form
+
+Given a matrix mat[][] of size m x n, the task is to print all elements of the matrix in spiral form.
+
+Examples: 
+
+Input: mat[][] = [[1,   2,   3,   4],
+              [5,    6,   7,   8],
+              [9,   10,  11,  12],
+            [13,  14,  15,  16]]
+Output: [ 1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10 ]
+[caption width="800"]Example-of-matrix-in-spiral-formExample of matrix in spiral form[/caption]
+Input: mat[][]= [[1,   2,   3,   4,  5,   6],
+           [7,   8,   9,  10,  11,  12],
+          [13,  14,  15, 16,  17,  18]]
+
+Output: [ 1, 2, 3, 4, 5, 6, 12, 18, 17, 16, 15, 14, 13, 7, 8, 9, 10, 11 ]
+
+Table of Content
+
+[Naive Approach] Using Simulation by Visited Matrix - O(m*n) Time and O(m*n) Space
+[Expected Approach] Using Boundary Traversal - O(m*n) Time and O(1) Space
+[Naive Approach] Using Simulation by Visited Matrix - O(m*n) Time and O(m*n) Space
+The idea is to simulate the spiral traversal by marking the cells that have already been visited. We can use a direction array to keep track of the movement (right, down, left, up) and change direction when we hit the boundary or a visited cell.
+
+Initialize a 2D array vis[][] to keep track of visited cells.
+Use direction arrays dr and dc to represent right, down, left, and up movements.
+Start from the top-left cell and follow the direction arrays to visit each cell.
+Change direction when encountering a boundary or a visited cell.
+Continue until all cells are visited.
