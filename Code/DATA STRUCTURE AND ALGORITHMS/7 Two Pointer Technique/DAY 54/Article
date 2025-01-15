@@ -1,0 +1,34 @@
+2 Sum - Count Pairs with given Sum in Sorted Array
+
+Given a sorted array arr[] and an integer target, the task is to find the number of pairs in the array whose sum is equal to target.
+
+Examples: 
+
+Input: arr[] = [-1, 1, 5, 5, 7], target = 6
+Output: 3
+Explanation: Pairs with sum 6 are (1, 5), (1, 5) and (-1, 7).         
+
+Input: arr[] = [1, 1, 1, 1], target = 2
+Output: 6
+Explanation: Pairs with sum 2 are (1, 1), (1, 1), (1, 1), (1, 1), (1, 1) and (1, 1).
+
+Input: arr[] = [-1, 10, 10, 12, 15], target = 125
+Output:  0
+
+In this post, we are counting pairs with given sum when the input array is sorted. To count the pairs when the input array is not sorted, refer to 2 Sum – Count pairs with given sum.
+
+Table of Content
+
+[Naive Approach] By Generating All Possible Pairs - O(n^2) time and O(1) space
+[Expected Approach] Using Two Pointer Technique - O(n) and O(1) Space
+[Naive Approach] By Generating All Possible Pairs - O(n^2) time and O(1) space
+The very basic approach is to generate all the possible pairs and check if any pair exists whose sum is equals to given target value, then increment the count variable.
+
+To know more about the implementation, please refer 2 Sum – Count pairs with given sum.
+
+[Expected Approach] Using Two Pointer Technique - O(n) and O(1) Space
+The idea is to use the two-pointer technique by maintaining two pointers, say left and right and initialize them to the first and last element of the array respectively. According to the sum of left and right pointers, we can have three cases:
+
+arr[left] + arr[right] < target: We need to increase the sum of pair, move the left pointer towards right.
+arr[left] + arr[right] > target: We need to decrease the sum of pair, move the right pointer towards left.
+arr[left] + arr[right] = target: We have found a pair whose sum is equal to target. We can find the product of the count of both the elements and add them to the result.
