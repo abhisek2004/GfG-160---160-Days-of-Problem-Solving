@@ -1,0 +1,64 @@
+### **Largest Subarray of 0's and 1's**
+
+**Difficulty**: Easy  
+**Accuracy**: 32.96%  
+**Submissions**: 100K+  
+**Points**: 2
+
+---
+
+### **Problem Statement**
+
+Given an array `arr[]` consisting of only `0`s and `1`s, find and return the length of the longest subarray that contains an **equal number of 0s and 1s**.
+
+---
+
+### **Examples**
+
+#### Example 1
+
+**Input**:  
+`arr[] = [1, 0, 1, 1, 1, 0, 0]`  
+**Output**:  
+`6`  
+**Explanation**:  
+The longest subarray with an equal number of `0`s and `1`s is `[0, 1, 1, 1, 0, 0]` from index `1` to `6`.
+
+---
+
+#### Example 2
+
+**Input**:  
+`arr[] = [0, 0, 1, 1, 0]`  
+**Output**:  
+`4`  
+**Explanation**:  
+The subarrays `[0, 0, 1, 1]` or `[0, 1, 1, 0]` are the longest with two `0`s and two `1`s.
+
+---
+
+#### Example 3
+
+**Input**:  
+`arr[] = [0]`  
+**Output**:  
+`0`  
+**Explanation**:  
+There is no subarray with an equal number of `0`s and `1`s.
+
+---
+
+### **Constraints**
+
+- \(1 \leq arr.size() \leq 10^5\)
+- \(0 \leq arr[i] \leq 1\)
+
+---
+
+### **Approach**
+
+1. Convert all `0`s to `-1`s so that the problem reduces to finding the longest subarray with a sum of `0`.
+2. Use a **prefix sum with a hash map** to store the earliest index where each sum is encountered.
+3. Traverse the array, maintain a running sum, and calculate the maximum length of the subarray with sum `0`.
+4. Time complexity: **O(n)** for a single pass through the array.
+5. Space complexity: **O(n)** for the hash map.
