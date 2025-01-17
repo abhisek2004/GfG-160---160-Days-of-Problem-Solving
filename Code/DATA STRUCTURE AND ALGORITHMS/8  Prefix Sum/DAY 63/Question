@@ -1,0 +1,75 @@
+### **Product Array Puzzle**
+
+**Difficulty**: Easy  
+**Accuracy**: 33.46%  
+**Submissions**: 260K+  
+**Points**: 2
+
+---
+
+### **Problem Statement**
+
+Given an array `arr[]` of size `n`, construct a product array `res[]` such that:
+
+- `res[i]` is the product of all elements in `arr[]` except `arr[i]`.  
+  Return this resultant array `res[]`.
+
+**Note**:  
+Each element in `res[]` lies within the **32-bit integer** range.
+
+---
+
+### **Examples**
+
+#### Example 1
+
+**Input**:  
+`arr[] = [10, 3, 5, 6, 2]`  
+**Output**:  
+`[180, 600, 360, 300, 900]`  
+**Explanation**:
+
+- `res[0] = 3 * 5 * 6 * 2 = 180`
+- `res[1] = 10 * 5 * 6 * 2 = 600`
+- `res[2] = 10 * 3 * 6 * 2 = 360`
+- `res[3] = 10 * 3 * 5 * 2 = 300`
+- `res[4] = 10 * 3 * 5 * 6 = 900`
+
+---
+
+#### Example 2
+
+**Input**:  
+`arr[] = [12, 0]`  
+**Output**:  
+`[0, 12]`  
+**Explanation**:
+
+- `res[0]` is `0` since the product of all other elements except `arr[0]` includes `0`.
+- `res[1]` is `12` since the product of all other elements except `arr[1]` is `12`.
+
+---
+
+### **Constraints**
+
+- \(2 \leq \text{arr.size()} \leq 10^5\)
+- \(-100 \leq \text{arr[i]} \leq 100\)
+
+---
+
+### **Approach**
+
+1. **Optimal solution without division**:
+
+   - Use two auxiliary arrays, `left[]` and `right[]`, where:
+     - `left[i]` stores the product of all elements to the left of index `i`.
+     - `right[i]` stores the product of all elements to the right of index `i`.
+   - Compute the result as `res[i] = left[i] * right[i]`.
+   - This approach avoids division and works efficiently within constraints.
+
+2. **Time Complexity**:
+
+   - **O(n)** for computing left and right arrays.
+
+3. **Space Complexity**:
+   - **O(n)** for storing `left` and `right` arrays.
