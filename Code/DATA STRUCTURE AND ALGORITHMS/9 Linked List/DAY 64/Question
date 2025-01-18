@@ -1,0 +1,66 @@
+### **Reverse a Linked List**
+
+**Difficulty**: Easy  
+**Accuracy**: 73.11%  
+**Submissions**: 329K+  
+**Points**: 2
+
+---
+
+### **Problem Statement**
+
+Given the head of a linked list, reverse the list and return the new head of the reversed linked list.
+
+---
+
+### **Examples**
+
+#### Example 1
+
+**Input**:  
+`head: 1 -> 2 -> 3 -> 4 -> NULL`  
+**Output**:  
+`head: 4 -> 3 -> 2 -> 1 -> NULL`
+
+---
+
+#### Example 2
+
+**Input**:  
+`head: 2 -> 7 -> 10 -> 9 -> 8 -> NULL`  
+**Output**:  
+`head: 8 -> 9 -> 10 -> 7 -> 2 -> NULL`
+
+---
+
+#### Example 3
+
+**Input**:  
+`head: 2 -> NULL`  
+**Output**:  
+`head: 2 -> NULL`
+
+---
+
+### **Constraints**
+
+- \(1 \leq \text{number of nodes} \leq 10^5\)
+- \(1 \leq \text{data of nodes} \leq 10^5\)
+
+---
+
+### **Approach**
+
+1. **Iterative Method**:
+
+   - Initialize three pointers: `prev = NULL`, `current = head`, and `next = NULL`.
+   - Traverse the list, updating the next pointer of each node to point to its previous node.
+   - Move `prev` and `current` forward until the end of the list.
+   - Set `head` to `prev` to make it the new head of the reversed list.
+   - **Time Complexity**: O(n), where `n` is the number of nodes.
+   - **Space Complexity**: O(1), since no extra space is required.
+
+2. **Recursive Method**:
+   - Recursively reverse the sublist starting from the next node.
+   - Update the next pointer of the current node to point to itself.
+   - Handle base cases for empty or single-node lists.
