@@ -63,3 +63,5 @@ Rotate 4: `50 -> 10 -> 20 -> 30 -> 40`
    - Traverse the list to find the `(k+1)th` node and break the link to create two sublists.
    - The `(k+1)th` node becomes the new head, and the last node points back to the original head to complete the rotation.
 
+3. **Time Complexity**: O(n) to traverse the list.
+4. **Space Complexity**: O(1), in-place rotation.
