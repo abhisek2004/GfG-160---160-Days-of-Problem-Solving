@@ -1,0 +1,67 @@
+### **Rotate a Linked List**
+
+**Difficulty**: Medium  
+**Accuracy**: 39.95%  
+**Submissions**: 274K+  
+**Points**: 4
+
+---
+
+### **Problem Statement**
+
+Given the head of a singly linked list, rotate the linked list to the left by **k** times.
+
+---
+
+### **Examples**
+
+#### Example 1
+
+**Input**:  
+`head = 10 -> 20 -> 30 -> 40 -> 50`  
+`k = 4`
+
+**Output**:  
+`50 -> 10 -> 20 -> 30 -> 40`
+
+**Explanation**:  
+Rotate 1: `20 -> 30 -> 40 -> 50 -> 10`  
+Rotate 2: `30 -> 40 -> 50 -> 10 -> 20`  
+Rotate 3: `40 -> 50 -> 10 -> 20 -> 30`  
+Rotate 4: `50 -> 10 -> 20 -> 30 -> 40`
+
+---
+
+#### Example 2
+
+**Input**:  
+`head = 10 -> 20 -> 30 -> 40`  
+`k = 6`
+
+**Output**:  
+`30 -> 40 -> 10 -> 20`
+
+---
+
+### **Constraints**
+
+- \(1 \leq \text{number of nodes} \leq 10^5\)
+- \(0 \leq k \leq 10^9\)
+- \(0 \leq \text{data of node} \leq 10^9\)
+
+---
+
+### **Approach**
+
+1. **Handle Large `k`**:
+
+   - Since `k` can be very large, reduce it using `k = k % n`, where `n` is the length of the linked list.
+   - If `k == 0`, return the original list as no rotation is needed.
+
+2. **Find the New Head**:
+
+   - Traverse the list to find the `(k+1)th` node and break the link to create two sublists.
+   - The `(k+1)th` node becomes the new head, and the last node points back to the original head to complete the rotation.
+
+3. **Time Complexity**: O(n) to traverse the list.
+4. **Space Complexity**: O(1), in-place rotation.
