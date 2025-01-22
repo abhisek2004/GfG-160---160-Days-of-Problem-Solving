@@ -1,0 +1,80 @@
+### Problem Statement
+
+You are given two singly linked lists, `num1` and `num2`, where each linked list represents a non-negative integer. The digits are stored in reverse order, meaning the least significant digit is at the head of the list. The task is to return the sum of these two numbers as a new linked list in the same format.
+
+**Note:**
+
+- The input numbers may have leading zeros, but the output should not contain leading zeros (except for the number `0`).
+
+---
+
+### Examples
+
+#### Example 1
+
+**Input:**  
+`num1 = 4 -> 5`  
+`num2 = 3 -> 4 -> 5`
+
+**Output:**  
+`3 -> 9 -> 0`
+
+**Explanation:**
+
+- Number represented by `num1` is `45`.
+- Number represented by `num2` is `345`.
+- Sum is `390`, which is represented as `3 -> 9 -> 0`.
+
+---
+
+#### Example 2
+
+**Input:**  
+`num1 = 0 -> 0 -> 6 -> 3`  
+`num2 = 0 -> 7`
+
+**Output:**  
+`7 -> 0`
+
+**Explanation:**
+
+- Number represented by `num1` is `63`.
+- Number represented by `num2` is `7`.
+- Sum is `70`, represented as `7 -> 0`.
+
+---
+
+### Constraints
+
+- `1 <= size of both linked lists <= 10⁶`
+- `0 <= elements of both linked lists <= 9`
+
+---
+
+### **Approach**
+
+The key steps to solve this problem efficiently are:
+
+1. Traverse both linked lists simultaneously, adding the corresponding nodes' values.
+2. Keep track of the carry from each addition.
+   - Example: If the sum of a pair of digits is `13`, store `3` in the current node and carry `1` to the next digit.
+3. Continue until all nodes are processed, including any remaining carry.
+4. If one list is longer than the other, continue adding its remaining digits along with the carry.
+5. Handle leading zeros by ensuring the result list starts with the first non-zero digit (except when the result is `0`).
+
+### **Explanation of the Code**
+
+- `ListNode` represents a single node in a linked list.
+- `addTwoNumbers` function creates a new linked list by iterating through `num1` and `num2`.
+- A `dummy` node is used to simplify list construction, and a `carry` variable stores overflow from each addition.
+- The loop runs while there are nodes left in either `num1` or `num2`, or there is a carry to handle.
+- Digits are added and stored in the result list using modulo (`%`) for the current digit and division (`//`) for the carry.
+
+---
+
+### **Time and Space Complexity**
+
+- **Time Complexity:** O(max(m, n)), where `m` and `n` are the lengths of `num1` and `num2`. Each node is processed once.
+- **Space Complexity:** O(max(m, n)) for the new linked list created.
+
+This solution efficiently handles large inputs within constraints. Let me know if you want to explore more variations or optimizations!
