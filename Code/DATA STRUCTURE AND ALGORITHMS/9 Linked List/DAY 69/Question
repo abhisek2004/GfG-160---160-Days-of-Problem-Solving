@@ -1,0 +1,88 @@
+### Clone List with Next and Random
+
+**Difficulty:** Hard  
+**Accuracy:** 64.8%  
+**Submissions:** 101K+  
+**Points:** 8
+
+---
+
+### Problem Statement:
+
+You are given a special linked list with **n nodes**, where each node has two pointers:
+
+1. A `next` pointer that points to the next node in the singly linked list.
+2. A `random` pointer that points to any random node in the linked list (or `NULL`).
+
+The task is to create a **deep copy** of this linked list. The copied list must:
+
+- Contain the same number of nodes as the original list.
+- Ensure that the `next` and `random` pointers in the new nodes correctly replicate the structure of the original list.
+- Not have any pointers in the copied list referencing nodes in the original list.
+
+The original linked list must remain unchanged.
+
+---
+
+### **Examples:**
+
+#### Example 1:
+
+**Input:**  
+`head = [[1, 3], [3, 3], [5, NULL], [9, 3]]`
+
+**Output:**  
+`head = [[1, 3], [3, 3], [5, NULL], [9, 3]]`
+
+**Explanation:**
+
+- Node 1 points to Node 2 as its `next` and Node 3 as its `random`.
+- Node 2 points to Node 3 as its `next` and Node 3 as its `random`.
+- Node 3 points to Node 4 as its `next` and `NULL` as its `random`.
+- Node 4 points to `NULL` as its `next` and Node 3 as its `random`.
+
+The deep copy replicates the same structure and relationships.
+
+---
+
+#### Example 2:
+
+**Input:**  
+`head = [[1, 3], [2, 1], [3, 5], [4, 3], [5, 2]]`
+
+**Output:**  
+`head = [[1, 3], [2, 1], [3, 5], [4, 3], [5, 2]]`
+
+**Explanation:**
+
+- Node 1 points to Node 2 as its `next` and Node 3 as its `random`.
+- Node 2 points to Node 3 as its `next` and Node 1 as its `random`.
+- Node 3 points to Node 4 as its `next` and Node 5 as its `random`.
+- Node 4 points to Node 5 as its `next` and Node 3 as its `random`.
+- Node 5 points to `NULL` as its `next` and Node 2 as its `random`.
+
+---
+
+#### Example 3:
+
+**Input:**  
+`head = [[7, NULL], [7, NULL]]`
+
+**Output:**  
+`head = [[7, NULL], [7, NULL]]`
+
+**Explanation:**
+
+- Node 1 points to Node 2 as its `next` and `NULL` as its `random`.
+- Node 2 points to `NULL` as its `next` and `NULL` as its `random`.
+
+---
+
+### **Constraints:**
+
+- `1 <= n <= 100`
+- `0 <= node->data <= 1000`
+
+---
+
+This problem tests your ability to handle deep copies with additional relationships in linked list structures, requiring efficient traversal and mapping of original to cloned nodes.
