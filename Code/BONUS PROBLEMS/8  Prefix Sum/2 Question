@@ -1,0 +1,114 @@
+### Problem: Longest Subarray with Majority Greater than K
+
+**Difficulty:** Medium  
+**Accuracy:** 44.93%  
+**Submissions:** 659+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+You are given an array `arr[]` of integers and a value `k`. The task is to find the **length of the longest subarray** where the count of elements greater than `k` is **strictly more** than the count of elements less than or equal to `k`.
+
+---
+
+### **Examples:**
+
+#### Example 1:
+
+**Input:**  
+`arr[] = [1, 2, 3, 4, 1]`, `k = 2`
+
+**Output:**  
+`3`
+
+**Explanation:**
+
+- Consider the subarray `[2, 3, 4]`:  
+  Elements > 2: `[3, 4]` (count = 2)  
+  Elements ≤ 2: `[2]` (count = 1)  
+  This satisfies the condition.
+- Similarly, subarray `[3, 4, 1]` also satisfies the condition.
+- There is no subarray of length 4 or 5 that satisfies the condition.
+
+---
+
+#### Example 2:
+
+**Input:**  
+`arr[] = [6, 5, 3, 4]`, `k = 2`
+
+**Output:**  
+`4`
+
+**Explanation:**
+
+- In the subarray `[6, 5, 3, 4]`:  
+  Elements > 2: `[6, 5, 3, 4]` (count = 4)  
+  Elements ≤ 2: `[]` (count = 0)  
+  Since count of elements > 2 is greater, the entire array satisfies the condition.
+
+---
+
+### **Constraints:**
+
+- `1 <= arr.size() <= 10^6`
+- `1 <= arr[i] <= 10^6`
+- `0 <= k <= 10^6`
+
+---
+
+### **Approach:**
+
+To solve this efficiently, we can use the following approach:
+
+#### Key Idea:
+
+We will **convert the array into a new form** where:
+
+- For each element in `arr[i]`, replace it with:
+  - `+1` if `arr[i] > k`
+  - `-1` if `arr[i] <= k`
+
+Now the problem reduces to finding the **longest subarray** where the sum of the transformed array is strictly greater than `0`.
+
+---
+
+#### Steps:
+
+1. Transform the array as explained above.
+2. Use a **prefix sum** technique to calculate cumulative sums.
+3. Use a **hash map** to store the first occurrence of each prefix sum.
+4. For each index, calculate the difference in prefix sums that ensures the subarray satisfies the condition.
+5. Track the maximum length of such subarrays.
+
+This approach works in **O(n)** time and **O(n)** space.
+
+---
+
+### **Example Walkthrough:**
+
+#### Input:
+
+`arr[] = [1, 2, 3, 4, 1]`, `k = 2`
+
+#### Step 1: Transform the array:
+
+- Replace each element based on the condition:  
+  `arr[] = [-1, -1, +1, +1, -1]`
+
+#### Step 2: Find longest subarray with sum > 0:
+
+- Calculate prefix sums:  
+  Prefix Sum Array: `[0, -1, -2, -1, 0, -1]`
+- Use a hash map to store the first occurrence of each prefix sum.
+- Track the longest subarray where the prefix sum difference is > 0.
+
+#### Output:
+
+`3`
+
+---
+
+This method is efficient and handles large input sizes due to its linear complexity.
