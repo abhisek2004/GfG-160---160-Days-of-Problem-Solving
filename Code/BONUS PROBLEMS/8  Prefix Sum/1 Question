@@ -1,0 +1,91 @@
+### Number of Times Graph Cuts X-Axis
+
+**Difficulty:** Easy  
+**Accuracy:** 52.7%  
+**Submissions:** 748+  
+**Points:** 2
+
+---
+
+### Problem Statement:
+
+You are given an integer array `arr[]`, where each element in the array represents the trajectory of a graph:
+
+- If `arr[i] > 0`, the graph moves upward by `arr[i]` units from its current position.
+- If `arr[i] < 0`, the graph moves downward by `|arr[i]|` units from its current position.
+
+The graph starts at the origin (`y = 0`). Your task is to determine how many times the graph **crosses or touches** the X-axis during its trajectory.
+
+---
+
+### **Examples:**
+
+#### Example 1:
+
+**Input:**  
+`arr[] = [2, 5, -9, 4]`
+
+**Output:**  
+`2`
+
+**Explanation:**
+
+- The graph starts at `y = 0`.
+- Moves up by `2` (`y = 2`), then up by `5` (`y = 7`), then down by `-9` (`y = -2`), and finally up by `4` (`y = 2`).
+- The graph crosses or touches the X-axis:
+  1. From index `1` to `2` (crosses from `y > 0` to `y < 0`).
+  2. From index `2` to `3` (crosses from `y < 0` to `y > 0`).
+
+---
+
+#### Example 2:
+
+**Input:**  
+`arr[] = [4, -6, 2, 8, -2, 3, -12]`
+
+**Output:**  
+`3`
+
+**Explanation:**
+
+- The graph starts at `y = 0`.
+- Moves up by `4` (`y = 4`), then down by `-6` (`y = -2`), then up by `2` (`y = 0`), then up by `8` (`y = 8`), and so on.
+- The graph crosses or touches the X-axis:
+  1. From index `0` to `1`.
+  2. From index `1` to `2`.
+  3. From index `5` to `6`.
+
+---
+
+#### Example 3:
+
+**Input:**  
+`arr[] = [1, 3, 5]`
+
+**Output:**  
+`0`
+
+**Explanation:**  
+The graph always remains above the X-axis (`y > 0`) and never touches or crosses the X-axis.
+
+---
+
+### **Constraints:**
+
+- `1 <= arr.size() <= 10^5`
+- `-10^4 <= arr[i] <= 10^4`
+- `arr[i]` does not contain any zeros.
+
+---
+
+### **Approach:**
+
+To solve the problem efficiently:
+
+1. Start with the initial position at `y = 0`.
+2. Traverse the array and update the value of `y` based on the movement (`arr[i]`).
+3. Check for changes in the sign of `y` between consecutive indices (`y > 0` to `y < 0` or vice versa).
+4. Count the number of times such sign changes occur.
+5. Return the count as the result.
+
+This approach works in **O(n)** time complexity and **O(1)** space complexity.
