@@ -1,0 +1,98 @@
+### **Problem: LRU Cache**
+
+**Difficulty:** Hard  
+**Accuracy:** 18.44%  
+**Submissions:** 157K+  
+**Points:** 8
+
+---
+
+### **Problem Statement:**
+
+Design a data structure that operates as a **Least Recently Used (LRU) Cache**. The cache should have a fixed capacity (`cap`), and it should be able to process two types of queries:
+
+1. **PUT x y**:
+
+   - Sets the value of the key `x` to `y`.
+   - If the key is already present in the cache, update its value and make it the most recently used.
+   - If the key is not present, add it to the cache. If the cache reaches its capacity, evict the least recently used (LRU) item before inserting the new item.
+
+2. **GET x**:
+   - Returns the value of the key `x` if it exists in the cache.
+   - If the key is not present, return `-1`.
+
+The cache should be implemented efficiently to handle frequent operations, with both `GET` and `PUT` operations running in **O(1)** time on average.
+
+---
+
+### **Input Format:**
+
+- `cap`: An integer representing the capacity of the cache.
+- `Q`: An integer representing the number of queries.
+- `Queries`: A list of queries where each query is of the form:
+  - `["PUT", x, y]` for a `PUT` operation.
+  - `["GET", x]` for a `GET` operation.
+
+---
+
+### **Output Format:**
+
+- For each `GET` query, return the value of the key `x` if it exists, otherwise return `-1`.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**  
+`cap = 2, Q = 2, Queries = [["PUT", 1, 2], ["GET", 1]]`
+
+**Output:**  
+`[2]`
+
+**Explanation:**
+
+- Cache Size = 2.
+- **PUT (1, 2)**: Inserts the key-value pair `(1, 2)` into the cache.
+- **GET (1)**: The key `1` exists in the cache, so return `2`.
+
+---
+
+#### **Example 2:**
+
+**Input:**  
+`cap = 2, Q = 8, Queries = [["PUT", 1, 2], ["PUT", 2, 3], ["PUT", 1, 5], ["PUT", 4, 5], ["PUT", 6, 7], ["GET", 4], ["PUT", 1, 2], ["GET", 3]]`
+
+**Output:**  
+`[5, -1]`
+
+**Explanation:**
+
+- Cache Size = 2.
+- **PUT (1, 2)**: Inserts `(1, 2)` into the cache.
+- **PUT (2, 3)**: Inserts `(2, 3)` into the cache. Cache: `1 -> 2, 2 -> 3`.
+- **PUT (1, 5)**: Updates the value of `1` to `5`. Cache: `2 -> 3, 1 -> 5`.
+- **PUT (4, 5)**: Evicts `(2, 3)` (LRU) and inserts `(4, 5)`. Cache: `1 -> 5, 4 -> 5`.
+- **PUT (6, 7)**: Evicts `(1, 5)` (LRU) and inserts `(6, 7)`. Cache: `4 -> 5, 6 -> 7`.
+- **GET (4)**: Returns `5`. Cache: `6 -> 7, 4 -> 5`.
+- **PUT (1, 2)**: Evicts `(6, 7)` (LRU) and inserts `(1, 2)`. Cache: `4 -> 5, 1 -> 2`.
+- **GET (3)**: The key `3` is not in the cache, so return `-1`.
+
+---
+
+### **Constraints:**
+
+- `1 ≤ cap ≤ 10^3`
+- `1 ≤ Q ≤ 10^5`
+- `1 ≤ x, y ≤ 10^4`
+
+---
+
+### **Key Requirements for Solution:**
+
+1. **Efficient Lookup:** Use a hash map for fast key-value pair access.
+2. **Efficient Order Tracking:** Use a doubly linked list to maintain the order of key usage.
+3. **O(1) Operations:** Ensure both `GET` and `PUT` operations are optimized to run in constant time.
+
+Let me know if you'd like the code implementation!
