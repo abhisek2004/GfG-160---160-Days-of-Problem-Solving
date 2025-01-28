@@ -1,0 +1,105 @@
+### **Problem: Permutations of a String**
+
+**Difficulty:** Medium  
+**Accuracy:** 34.65%  
+**Submissions:** 287K+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+Given a string `s`, which may contain duplicate characters, your task is to generate and return an array of all **unique permutations** of the string. The output can be in any order.
+
+---
+
+### **Input Format:**
+
+- `s`: A string containing only uppercase English alphabets (`A-Z`).
+
+---
+
+### **Output Format:**
+
+- Return an array of all **unique permutations** of the string.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**  
+`s = "ABC"`
+
+**Output:**  
+`["ABC", "ACB", "BAC", "BCA", "CAB", "CBA"]`
+
+**Explanation:**  
+The given string "ABC" has 6 unique permutations.
+
+---
+
+#### **Example 2:**
+
+**Input:**  
+`s = "ABSG"`
+
+**Output:**  
+`["ABGS", "ABSG", "AGBS", "AGSB", "ASBG", "ASGB", "BAGS", "BASG", "BGAS", "BGSA", "BSAG", "BSGA", "GABS", "GASB", "GBAS", "GBSA", "GSAB", "GSBA", "SABG", "SAGB", "SBAG", "SBGA", "SGAB", "SGBA"]`
+
+**Explanation:**  
+The given string "ABSG" has 24 unique permutations.
+
+---
+
+#### **Example 3:**
+
+**Input:**  
+`s = "AAA"`
+
+**Output:**  
+`["AAA"]`
+
+**Explanation:**  
+Since all characters in "AAA" are identical, only one unique permutation is possible.
+
+---
+
+### **Constraints:**
+
+1. `1 ≤ s.size() ≤ 9`
+2. `s` contains only uppercase English alphabets (`A-Z`).
+
+---
+
+### **Approach:**
+
+To generate all unique permutations:
+
+1. Use a backtracking algorithm to explore all possible permutations.
+2. Use a data structure (e.g., a set) to store unique permutations and avoid duplicates.
+3. Alternatively, use Python's `itertools.permutations` to directly generate permutations, then filter out duplicates by converting the result to a set.
+
+# Example Usage:
+
+s1 = "ABC"
+print(find_permutations(s1)) # Output: ["ABC", "ACB", "BAC", "BCA", "CAB", "CBA"]
+
+s2 = "ABSG"
+print(find_permutations(s2)) # Output: ["ABGS", "ABSG", ..., "SGBA"]
+
+s3 = "AAA"
+print(find_permutations(s3)) # Output: ["AAA"]
+
+```
+
+---
+
+### **Optimization Note:**
+
+- Since `1 ≤ s.size() ≤ 9`, the maximum number of permutations is `9! = 362,880`. This size is manageable within the constraints.
+- Using `itertools.permutations` is efficient and avoids implementing the permutation generation logic manually.
+
+Let me know if you'd like to see a custom implementation of the backtracking approach!
+```
