@@ -1,0 +1,86 @@
+### **Problem: Implement Power Function (`pow(b, e)`)**
+
+**Difficulty:** Medium  
+**Accuracy:** 52.79%  
+**Submissions:** 12K+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+Implement the function `power(b, e)`, which calculates \( b^e \) (i.e., `b` raised to the power of `e`).
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**  
+`b = 3.00000, e = 5`
+
+**Output:**  
+`243.00000`
+
+#### **Example 2:**
+
+**Input:**  
+`b = 0.55000, e = 3`
+
+**Output:**  
+`0.16638`
+
+#### **Example 3:**
+
+**Input:**  
+`b = -0.67000, e = -7`
+
+**Output:**  
+`-16.49971`
+
+---
+
+### **Constraints:**
+
+- `-100.0 < b < 100.0`
+- `-10^9 <= e <= 10^9`
+- Either `b` is not zero or `e > 0`.
+- `-10^4 <= b^e <= 10^4`
+
+---
+
+### **Efficient Approach: Fast Exponentiation (Binary Exponentiation)**
+
+Using **fast exponentiation**, we can compute \( b^e \) efficiently with **O(log e)** complexity instead of naive O(e).
+
+#### **Key Observations:**
+
+1. If `e == 0`, return `1` (Base case).
+2. If `e < 0`, compute \( (1/b)^{-e} \).
+3. If `e` is even, use:
+   \[
+   b^e = (b^{e/2}) \times (b^{e/2})
+   \]
+4. If `e` is odd, use:
+   \[
+   b^e = b \times (b^{e-1})
+   \]
+
+# Example Usage:
+
+print(power(3.00000, 5)) # Output: 243.00000
+print(power(0.55000, 3)) # Output: 0.16638
+print(power(-0.67000, -7)) # Output: -16.49971
+
+```
+
+---
+
+### **Time Complexity Analysis:**
+
+- **O(log e)** due to exponentiation by squaring (binary exponentiation).
+- **O(1)** space complexity (constant extra space).
+
+This is an optimal approach for handling large exponents efficiently. 🚀 Let me know if you need any modifications!
+```
