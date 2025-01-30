@@ -1,0 +1,96 @@
+### **N-Queens Problem**
+
+**Difficulty:** Hard  
+**Accuracy:** 35.43%  
+**Submissions:** 96K+  
+**Points:** 8
+
+---
+
+### **Problem Statement:**
+
+The **N-Queens puzzle** is about placing `n` queens on an **(n × n) chessboard** such that:
+
+- No two queens **attack** each other.
+- Queens attack if they are in the **same row, same column, or same diagonal**.
+
+Each solution should be represented as **permutations of `[1, 2, ..., n]`**, where:
+
+- The **`i`-th number** in the permutation represents the **row position** of the queen in the `i`-th column.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:** `n = 1`  
+**Output:** `[1]`  
+**Explanation:** Only one queen can be placed on the board.
+
+#### **Example 2:**
+
+**Input:** `n = 4`  
+**Output:**
+
+```
+[[2, 4, 1, 3],
+ [3, 1, 4, 2]]
+```
+
+**Explanation:** There are **2 valid solutions** for `n = 4`.
+
+#### **Example 3:**
+
+**Input:** `n = 2`  
+**Output:** `[]`  
+**Explanation:** No valid solutions exist for `n = 2`.
+
+---
+
+### **Constraints:**
+
+- `1 ≤ n ≤ 10`
+- You need to find **all distinct solutions**.
+
+---
+
+### **Approach: Backtracking**
+
+Since `n ≤ 10`, we can use **backtracking** to explore all possible placements efficiently.
+
+#### **Backtracking Idea:**
+
+1. Start placing queens **column by column**.
+2. Ensure that the new queen is **not attacked**:
+   - No other queen in the same **row**.
+   - No other queen in the same **diagonal**.
+3. If `n` queens are placed successfully, **store the valid solution**.
+4. **Backtrack** and explore other possibilities.
+
+---
+
+### **Efficient Implementation Strategy:**
+
+- Maintain **3 sets** for attacks:
+  - `cols`: Keeps track of occupied **columns**.
+  - `diag1`: Keeps track of occupied **primary diagonals** (`row - col`).
+  - `diag2`: Keeps track of occupied **secondary diagonals** (`row + col`).
+- Use **recursion + backtracking** to explore placements.
+
+### **Time Complexity Analysis:**
+
+- The **worst-case** scenario explores `n!` possibilities.
+- Pruning (via sets) makes it **much faster** than `O(n!)`.
+- **Effective Complexity:** **`O(n!)`** (Factorial growth for large `n`).
+
+---
+
+### **Key Takeaways:**
+
+✅ Uses **Backtracking** for efficient exploration.  
+✅ Uses **Sets** (`cols`, `diag1`, `diag2`) for quick attack checks.  
+✅ **Time Complexity** is `O(n!)`, but pruning makes it feasible for `n ≤ 10`.  
+✅ **Space Complexity:** `O(n)`, storing `n` placements.
+
+🚀 **This method efficiently finds all valid solutions for N-Queens!**
