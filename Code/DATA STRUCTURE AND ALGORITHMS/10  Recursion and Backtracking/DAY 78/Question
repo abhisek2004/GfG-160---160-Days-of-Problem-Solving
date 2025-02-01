@@ -1,0 +1,138 @@
+## **Word Search Problem**
+
+**Difficulty:** Medium  
+**Accuracy:** 32.69%  
+**Submissions:** 58K+  
+**Points:** 4
+
+---
+
+## **Problem Statement**
+
+You are given a **2D grid** `mat[][]` of size **n × m**, filled with **English alphabets**, and a **string `word`**.  
+Check if the **word** exists in the grid.
+
+✅ The word can be formed by moving **horizontally or vertically** (not diagonally).  
+✅ The **same cell cannot be used more than once** in a word search path.
+
+---
+
+## **Examples**
+
+### **Example 1**
+
+#### **Input:**
+
+```plaintext
+mat = [['T', 'E', 'E'],
+       ['S', 'G', 'K'],
+       ['T', 'E', 'L']]
+word = "GEEK"
+```
+
+#### **Output:**
+
+```plaintext
+true
+```
+
+#### **Explanation:**
+
+The word **GEEK** can be formed by moving through the following path:  
+`(1,1) → (1,2) → (2,2) → (0,2)`
+
+---
+
+### **Example 2**
+
+#### **Input:**
+
+```plaintext
+mat = [['T', 'E', 'U'],
+       ['S', 'G', 'K'],
+       ['T', 'E', 'L']]
+word = "GEEK"
+```
+
+#### **Output:**
+
+```plaintext
+false
+```
+
+#### **Explanation:**
+
+There is no valid path to form "GEEK".
+
+---
+
+### **Example 3**
+
+#### **Input:**
+
+```plaintext
+mat = [['A', 'B', 'A'],
+       ['B', 'A', 'B']]
+word = "AB"
+```
+
+#### **Output:**
+
+```plaintext
+true
+```
+
+#### **Explanation:**
+
+There are multiple valid paths to form "AB".
+
+---
+
+## **Constraints**
+
+- `1 ≤ n, m ≤ 6` (Small grid size)
+- `1 ≤ L ≤ 15` (Word length)
+- `mat[][]` and `word` consist of **only uppercase and lowercase English letters**.
+
+---
+
+## **Approach: Backtracking with DFS**
+
+### **Why DFS & Backtracking?**
+
+Since we can move **only horizontally or vertically**, we can **explore all possible paths recursively** using **Depth First Search (DFS)**.
+
+#### **Algorithm:**
+
+1. **Find the starting character:**
+   - Traverse the `mat[][]` to locate **all** positions where the **first character of `word`** is found.
+2. **Use DFS to explore adjacent cells:**
+   - Move in **4 directions** → `up, down, left, right`.
+   - Mark visited cells to avoid reusing them in the same path.
+3. **Base case:**
+   - If the index `i == len(word)`, return `True` (word found).
+4. **Backtracking:**
+   - If a path fails, **undo** the changes and try another direction.
+
+## **Complexity Analysis**
+
+- **Time Complexity:** `O(n * m * 4^L)`
+
+  - **n × m**: We start DFS from every cell in the grid.
+  - **4^L**: Each DFS step has 4 possible moves.
+  - **Pruning:** If a character doesn’t match, we stop exploring that path early.
+
+- **Space Complexity:** `O(n × m) + O(L)`
+  - `O(n × m)`: `visited[][]` matrix.
+  - `O(L)`: Recursive stack depth (max `L`).
+
+---
+
+## **Key Takeaways**
+
+✅ **DFS with Backtracking** is the best approach to solve this problem.  
+✅ **Grid traversal** is optimized by pruning paths early.  
+✅ **Time complexity is manageable** since `n, m ≤ 6`.  
+✅ **Edge cases are handled** (small grid, single-character words, multiple solutions).
+
+🚀 **Efficiently finds if a word exists in a grid!**
