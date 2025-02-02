@@ -1,0 +1,98 @@
+# User function Template for python3
+'''
+
+	{
+		# Node Class
+		class Node:
+		    def __init__(self, data):   # data -> value stored in node
+		        self.data = data
+		        self.next = None
+	}
+
+'''
+
+
+class Solution:
+    def reverse(self, head):
+        prev = None
+        curr = head
+        while curr:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        return prev
+
+    def CompareList(self, head, head2):
+        curr = head
+        curr2 = head2
+        while curr and curr2:
+            if curr.data != curr2.data:
+                return False
+            curr = curr.next
+            curr2 = curr2.next
+        return True
+
+    def isPalindrome(self, head):
+        # code here
+        if head is None or head.next is None:
+            return True
+        slow = head
+        fast = head
+        while fast.next and fast.next.next:
+            slow = slow.next
+            fast = fast.next.next
+        head2 = self.reverse(slow.next)
+        slow.next = None
+        ret = self.CompareList(head, head2)
+        head2 = self.reverse(head2)  # Reversing head2 back to original state
+        slow.next = head2  # Connecting the reversed part back to the original list
+        return ret
+# {
+ # Driver Code Starts
+# main
+
+
+class Node:
+    # Constructor to initialize the node object
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    # Function to initialize head
+    def __init__(self):
+        self.head = None
+
+    # Function to insert a new node at the beginning
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+
+    # Utility function to prit the linked LinkedList
+    def printList(self):
+        temp = self.head
+        while (temp):
+            print(temp.data, end=" ")
+            temp = temp.next
+        print("")
+
+
+if __name__ == '__main__':
+    t = int(input())
+    while (t > 0):
+        llist = LinkedList()
+        values = input().strip().split()
+        for i in reversed(values):
+            llist.push(i)
+        flag = Solution().isPalindrome(llist.head)
+        if flag:
+            print("true")
+        else:
+            print("false")
+        t -= 1
+        print("~")
+
+# } Driver Code Ends
