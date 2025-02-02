@@ -1,0 +1,51 @@
+class Solution:
+    def possiblewordrec(self, arr, index, prefix, padmap, res):
+        if index == len(arr):
+            res.append(prefix)
+            return
+        digit = arr[index]
+
+        if digit < 2 or digit > 9:
+            self.possiblewordrec(arr, index+1, prefix, padmap, res)
+            return
+        for ch in padmap[digit]:
+            self.possiblewordrec(arr, index+1, prefix+ch, padmap, res)
+
+    def possibleWords(self, numbers):
+        # code here
+        res = []
+        padmap = ["", "", "abc", "def", "ghi",
+                  "jkl", "mno", "pqrs", "tuv", "wxyz"]
+        self.possiblewordrec(arr, 0, "", padmap, res)
+        return res
+
+# {
+ # Driver Code Starts
+
+
+class IntArray:
+
+    def __init__(self):
+        pass
+
+    def Input(self, n):
+        return [int(i) for i in input().strip().split()]  # Array input
+
+    def Print(self, arr):
+        for i in arr:
+            print(i, end=" ")
+        print()
+
+
+if __name__ == "__main__":
+    t = int(input())  # Number of test cases
+    for _ in range(t):
+        arr = [int(i) for i in input().split()]  # Input array
+
+        obj = Solution()
+        v = obj.possibleWords(arr)
+        v.sort()
+        IntArray().Print(v)
+        print("~")
+
+# } Driver Code Ends
