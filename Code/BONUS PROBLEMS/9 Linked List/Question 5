@@ -1,0 +1,92 @@
+### **Flattening a Linked List**
+
+**Difficulty:** Medium  
+**Accuracy:** 51.53%  
+**Submissions:** 174K+  
+**Points:** 4
+
+#### **Problem Statement:**
+
+Given a **linked list** containing `n` head nodes where every node in the linked list contains two pointers:
+
+1. `next` → Points to the next node in the list.
+2. `bottom` ↓ Points to a **sub-linked list**, where the current node is the head.
+
+Each **sub-linked list** and the **main linked list** are **sorted** in ascending order based on their data.  
+The task is to **flatten the linked list** such that all nodes appear in a single level **while maintaining the sorted order**.
+
+---
+
+### **Notes:**
+
+- **↓ represents the bottom pointer.**
+- **→ represents the next pointer.**
+- The flattened list should be printed using the **bottom pointer** instead of the next pointer.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**
+
+```
+5 -> 10 -> 19 -> 28
+↓     ↓      ↓      ↓
+7     20     22     35
+↓            ↓      ↓
+8            30     40
+↓                   ↓
+10                  45
+↓
+50
+```
+
+**Output:**
+
+```
+5 -> 7 -> 8 -> 10 -> 19 -> 20 -> 22 -> 28 -> 30 -> 35 -> 40 -> 45 -> 50
+```
+
+**Explanation:**
+
+- The bottom pointer of `5` points to `7`.
+- The bottom pointer of `7` points to `8`.
+- The bottom pointer of `8` points to `10`, and so on.
+
+---
+
+#### **Example 2:**
+
+**Input:**
+
+```
+5 -> 10 -> 19
+↓     ↓      ↓
+7     22     28
+↓            ↓
+8            30
+↓
+10
+```
+
+**Output:**
+
+```
+5 -> 7 -> 8 -> 10 -> 19 -> 22 -> 28 -> 30
+```
+
+**Explanation:**
+
+- The bottom pointer of `5` points to `7`.
+- The bottom pointer of `7` points to `8`.
+- The bottom pointer of `8` points to `10`, and so on.
+
+---
+
+### **Constraints:**
+
+- `0 ≤ n ≤ 100` (number of head nodes)
+- `1 ≤ mi ≤ 50` (number of nodes in each sub-linked list)
+- `1 ≤ node->data ≤ 10⁴`
