@@ -1,0 +1,56 @@
+import sys
+
+
+class Solution:
+    def uniqueCombinations(self, arr, k):
+        n = len(arr)
+        arr.sort()
+        result = []
+        temp = []
+        self.solve(arr, k, 0, temp, result)
+        return result
+
+    def solve(self, arr, target, start, temp, result):
+        if target == 0:
+            result.append(temp[:])
+            return
+
+        for i in range(start, len(arr)):
+            if i > start and arr[i] == arr[i - 1]:
+                continue
+            if arr[i] > target:
+                break
+            temp.append(arr[i])
+            self.solve(arr, target - arr[i], i + 1, temp, result)
+            temp.pop()
+
+# {
+ # Driver Code Starts
+# Initial Template for Python 3
+
+
+sys.setrecursionlimit(10**6)
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+
+        arr = list(map(int, input().strip().split()))
+        sum = int(input())
+        ob = Solution()
+        ans = ob.uniqueCombinations(arr, sum)
+        if (len(ans) == 0):
+            print(-1)
+        else:
+            for i in range(len(ans)):
+                ans[i].sort()
+            ans.sort()
+            for i in range(len(ans)):
+                print("[", end="")
+                for j in range(len(ans[i])):
+                    print(ans[i][j], end=" ")
+                print("]", end=" ")
+            print()
+        print("~")
+
+# } Driver Code Ends
