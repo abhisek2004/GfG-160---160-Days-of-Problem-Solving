@@ -1,0 +1,142 @@
+## **Level Order Traversal of a Binary Tree**
+
+**Difficulty:** Easy  
+**Accuracy:** 70.31%  
+**Submissions:** 224K+  
+**Points:** 2
+
+---
+
+## **Problem Statement**
+
+Given the **root of a binary tree** with **n nodes**, return its **level order traversal**.  
+**Level order traversal** is a **breadth-first traversal (BFS)** that processes **all nodes at each level before moving to the next level**.
+
+---
+
+## **Examples**
+
+### **Example 1**
+
+#### **Input:**
+
+```plaintext
+root = [1, 2, 3]
+```
+
+#### **Tree Structure:**
+
+```
+   1
+  / \
+ 2   3
+```
+
+#### **Output:**
+
+```plaintext
+[[1], [2, 3]]
+```
+
+#### **Explanation:**
+
+- **Level 1:** `[1]`
+- **Level 2:** `[2, 3]`
+
+---
+
+### **Example 2**
+
+#### **Input:**
+
+```plaintext
+root = [10, 20, 30, 40, 50]
+```
+
+#### **Tree Structure:**
+
+```
+     10
+    /  \
+  20    30
+  / \
+40   50
+```
+
+#### **Output:**
+
+```plaintext
+[[10], [20, 30], [40, 50]]
+```
+
+---
+
+### **Example 3**
+
+#### **Input:**
+
+```plaintext
+root = [1, 3, 2, N, N, N, 4, 6, 5]
+```
+
+#### **Tree Structure:**
+
+```
+      1
+     / \
+    3   2
+         \
+          4
+         / \
+        6   5
+```
+
+#### **Output:**
+
+```plaintext
+[[1], [3, 2], [4], [6, 5]]
+```
+
+---
+
+## **Constraints**
+
+- `1 ≤ number of nodes ≤ 10⁵`
+- `0 ≤ node->data ≤ 10⁹`
+- The tree may not be **balanced** or **full**.
+
+---
+
+## **Approach: Breadth-First Search (BFS) using a Queue**
+
+### **Why BFS?**
+
+Since we need to traverse **level by level**, **Breadth-First Search (BFS)** is the best approach.
+
+### **Algorithm**
+
+1. **Use a Queue (`queue`)** to store nodes level by level.
+2. **Initialize**:
+   - Push the root node into the queue.
+3. **While the queue is not empty**:
+   - **Process all nodes at the current level** (using queue size).
+   - **Push child nodes** (left and right) into the queue for the next level.
+4. **Continue until all levels are processed**.
+
+## **Complexity Analysis**
+
+- **Time Complexity:** `O(n)`
+  - Each node is **visited once**, and **pushed/popped from the queue once**.
+- **Space Complexity:** `O(n)`
+  - The queue stores at most **one level of nodes** at a time, which in the worst case can be **O(n)**.
+
+---
+
+## **Key Takeaways**
+
+✅ **BFS is the best approach** for level order traversal.  
+✅ **Queue-based approach** ensures correct level-wise traversal.  
+✅ **Time complexity is optimal (`O(n)`)** since every node is processed once.  
+✅ **Works for large trees (`1 ≤ n ≤ 10⁵`) efficiently**.
+
+🚀 **Efficient solution for tree traversal problems!**
