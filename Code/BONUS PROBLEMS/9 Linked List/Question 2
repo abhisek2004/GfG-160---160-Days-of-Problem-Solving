@@ -1,0 +1,43 @@
+### **Palindrome Linked List**
+
+**Difficulty:** Medium  
+**Accuracy:** 41.48%  
+**Submissions:** 351K+  
+**Points:** 4
+
+#### **Problem Statement:**
+
+Given the head of a singly linked list of positive integers, the task is to check if the given linked list is a palindrome or not.
+
+#### **Examples:**
+
+##### **Example 1:**
+
+**Input:**  
+`head`: 1 → 2 → 1 → 1 → 2 → 1
+
+**Output:**  
+`true`
+
+**Explanation:**  
+The given linked list `1 → 2 → 1 → 1 → 2 → 1` is a palindrome.
+
+---
+
+##### **Example 2:**
+
+**Input:**  
+`head`: 1 → 2 → 3 → 4
+
+**Output:**  
+`false`
+
+**Explanation:**  
+The given linked list `1 → 2 → 3 → 4` is not a palindrome.
+
+---
+
+#### **Constraints:**
+
+- `1 ≤` number of nodes `≤ 10⁵`
+- `1 ≤` node->data `≤ 10³`
