@@ -1,0 +1,108 @@
+# User function Template for python3
+
+
+'''
+
+class Node:
+    def __init__(self, d):
+        self.data=d
+        self.next=None
+        self.bottom=None
+        
+'''
+
+
+class Solution:
+    def flatten(self, root):
+        # Your code here
+
+        if root is None or root.next is None:
+            return root
+
+        answ = self.flatten(root.next)
+
+        return self.mergedLists(root, answ)
+
+    def mergedLists(self, list1, list2):
+        dummy = Node(0)
+        tail = dummy
+        while list1 and list2:
+            if list1.data < list2.data:
+                tail.bottom = list1
+                list1 = list1.bottom
+            else:
+                tail.bottom = list2
+                list2 = list2.bottom
+
+            tail = tail.bottom
+            tail.next = None
+
+        if list1:
+            tail.bottom = list1
+        if list2:
+            tail.bottom = list2
+
+        return dummy.bottom
+
+# {
+ # Driver Code Starts
+
+
+class Node:
+
+    def __init__(self, d):
+        self.data = d
+        self.next = None
+        self.bottom = None
+
+
+def printList(node):
+    while node is not None:
+        print(node.data, end=" ")
+        node = node.bottom
+    print()
+
+
+def createLinkedList(lists):
+    head = None
+    temp = None
+    for list_head in lists:
+        if head is None:
+            head = list_head
+            temp = head
+        else:
+            temp.next = list_head
+            temp = temp.next
+    return head
+
+
+def main():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        lists = []
+        for _ in range(n):
+            values = list(map(int, input().split()))
+            head = None
+            temp = None
+            for value in values:
+                newNode = Node(value)
+                if head is None:
+                    head = newNode
+                    temp = head
+                else:
+                    temp.bottom = newNode
+                    temp = temp.bottom
+            lists.append(head)
+
+        sol = Solution()
+        linkedlist = createLinkedList(lists)
+        head = sol.flatten(linkedlist)
+        printList(head)
+        print("~")
+
+
+if __name__ == "__main__":
+    main()
+
+# } Driver Code Ends
