@@ -1,0 +1,54 @@
+import sys
+
+
+class Solution:
+    def makecomb(self, arr, remsum, cur, res, index):
+        if remsum == 0:
+            res.append(list(cur))
+            return
+        if remsum < 0 or index >= len(arr):
+            return
+        cur.append(arr[index])
+        self.makecomb(arr, remsum-arr[index], cur, res, index)
+        cur.pop()
+        self.makecomb(arr, remsum, cur, res, index+1)
+
+    # Function to find all combinations of elements
+    # in array arr that sum to target.
+    def combinationSum(self, arr, target):
+        # code here
+        arr.sort()
+        cur = []
+        res = []
+        self.makecomb(arr, target, cur, res, 0)
+        return res
+# {
+ # Driver Code Starts
+# Initial Template for Python 3
+
+
+sys.setrecursionlimit(10**6)
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+
+        arr = list(map(int, input().strip().split()))
+        sum = int(input())
+        ob = Solution()
+        ans = ob.combinationSum(arr, sum)
+        if (len(ans) == 0):
+            print(-1)
+        else:
+            for i in range(len(ans)):
+                ans[i].sort()
+            ans.sort()
+            for i in range(len(ans)):
+                print("[", end="")
+                for j in range(len(ans[i])):
+                    print(ans[i][j], end=" ")
+                print("]", end=" ")
+            print()
+        print("~")
+
+# } Driver Code Ends
