@@ -1,0 +1,48 @@
+class Solution:
+    def generateIp(self, s):
+        # Code here
+        def isValid(s):
+            n = len(s)
+            if n == 1:
+                return True
+            val = int(s)
+            if s[0] == '0' or val > 255:
+                return False
+            return True
+
+        def generateIpRec(s, index, curr, cnt, res):
+            temp = ""
+            if index >= len(s):
+                return
+            if cnt == 3:
+                temp = s[index:]
+                if len(temp) <= 3 and isValid(temp):
+                    res.append(curr+temp)
+                return
+            for i in range(index, min(index+3, len(s))):
+                temp += s[i]
+                if isValid(temp):
+                    generateIpRec(s, i+1, curr+temp+".", cnt+1, res)
+
+        res = []
+        generateIpRec(s, 0, "", 0, res)
+        return res
+
+
+# {
+ # Driver Code Starts
+# Main
+if __name__ == '__main__':
+    t = int(input())
+    for i in range(t):
+        s = input().strip()
+        res = Solution().generateIp(s)
+        res.sort()
+        if (len(res)):
+            for u in res:
+                print(u)
+        else:
+            print(-1)
+        print("~")
+
+# } Driver Code Ends
