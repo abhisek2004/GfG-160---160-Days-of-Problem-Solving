@@ -1,0 +1,80 @@
+# User function Template for python3
+
+from collections import defaultdict, deque
+
+
+class LFUCache:
+    def __init__(self, capacity: int):
+        # code here
+        self.capacity = capacity
+        self.keynode = {}
+        self.size = 0
+        self.minfreq = 0
+        self.freqlist = defaultdict(deque)
+        # self.keylist={}
+
+    def get(self, key: int) -> int:
+        if key not in self.keynode:
+            return -1
+        value, freq = self.keynode[key]
+        self.keynode[key] = (value, freq+1)
+        self.freqlist[freq].remove(key)
+        self.freqlist[freq+1].append(key)
+        # self.keylist[key]=len(self.freqlist[freq+1])-1
+        if not self.freqlist[self.minfreq]:
+            self.minfreq += 1
+        return value
+
+    def put(self, key: int, value: int) -> None:
+        if self.capacity <= 0:
+            return -1
+        if self.get(key) != -1:
+            self.keynode[key] = (value, self.keynode[key][1])
+            return
+        if self.size >= self.capacity:
+            min_freq_key = self.freqlist[self.minfreq].popleft()
+            del self.keynode[min_freq_key]
+            # del self.keylist[min_freq_key]
+            self.size -= 1
+        self.keynode[key] = (value, 1)
+        self.freqlist[1].append(key)
+        self.minfreq = 1
+        # self.keylist[key]=len(self.freqlist[1])-1
+        self.size += 1
+
+
+# Your LFUCache object will be instantiated and called as such:
+# obj = LFUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
+
+
+# {
+ # Driver Code Starts
+# Initial Template for Python 3
+
+
+def inputLine():
+    return input().strip().split()
+
+
+if __name__ == "__main__":
+    t = int(input())
+    for _ in range(t):
+        capacity = int(input())
+        cache = LFUCache(capacity)
+
+        queries = int(input())
+        for __ in range(queries):
+            vec = inputLine()
+            if vec[0] == "PUT":
+                key = int(vec[1])
+                value = int(vec[2])
+                cache.put(key, value)
+            else:
+                key = int(vec[1])
+                print(cache.get(key), end=" ")
+        print()
+        print("~")
+
+# } Driver Code Ends
