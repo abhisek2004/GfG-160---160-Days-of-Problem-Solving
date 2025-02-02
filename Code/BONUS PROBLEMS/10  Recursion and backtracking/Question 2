@@ -1,0 +1,64 @@
+### **Generate IP Addresses**
+
+**Difficulty:** Medium  
+**Accuracy:** 38.71%  
+**Submissions:** 40K+  
+**Points:** 4
+
+#### **Problem Statement:**
+
+Given a **string `s`** containing only digits, return all possible **valid** IP address combinations. The IP addresses must follow these conditions:
+
+1. A valid IP address consists of **four parts (A.B.C.D)**, where each part is a number from **0 to 255 (inclusive)**.
+2. No part can have **leading zeros**, except for "0" itself.
+   - ✅ `"0.11.21.1"` (valid)
+   - ❌ `"01.1.2.11"` (invalid)
+   - ❌ `"00.11.21.1"` (invalid)
+3. The numbers must be extracted in order from `s`.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**
+
+```
+s = "255678166"
+```
+
+**Output:**
+
+```
+["25.56.78.166", "255.6.78.166", "255.67.8.166", "255.67.81.66"]
+```
+
+**Explanation:**  
+These are the only valid possible IP addresses.
+
+---
+
+#### **Example 2:**
+
+**Input:**
+
+```
+s = "25505011535"
+```
+
+**Output:**
+
+```
+[]
+```
+
+**Explanation:**  
+We cannot generate a valid IP address with this string.
+
+---
+
+### **Constraints:**
+
+- `1 ≤ s.size() ≤ 16`
+- `s` contains only digits (`0-9`).
