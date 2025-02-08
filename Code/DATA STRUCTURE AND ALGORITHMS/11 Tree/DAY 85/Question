@@ -1,0 +1,146 @@
+### **Boundary Traversal of a Binary Tree**
+
+**Difficulty:** Medium  
+**Accuracy:** 23.33%  
+**Submissions:** 425K+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+Given a **Binary Tree**, find its **Boundary Traversal** in the following order:
+
+1. **Left Boundary**
+
+   - Includes all nodes on the path from the **root** to the **leftmost leaf node**.
+   - **Prefer left child over right child** when traversing.
+   - **Do not include leaf nodes** in this section.
+
+2. **Leaf Nodes**
+
+   - Includes **all leaf nodes** from **left to right**.
+   - Should not be counted in left or right boundary.
+
+3. **Reverse Right Boundary**
+   - Includes all nodes on the path from the **rightmost leaf node to the root**.
+   - **Prefer right child over left child** when traversing.
+   - **Do not include the root** in this section if it was already in the left boundary.
+
+📌 **Note:** If the root has no left/right subtree, then the root itself is considered the left/right boundary.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**
+
+```
+root[] = [1, 2, 3, 4, 5, 6, 7, N, N, 8, 9, N, N, N, N]
+```
+
+**Tree Structure:**
+
+```
+        1
+       / \
+      2   3
+     /   / \
+    4   6   7
+       / \
+      8   9
+```
+
+**Output:**
+
+```
+[1, 2, 4, 8, 9, 6, 7, 3]
+```
+
+**Explanation:**
+
+- **Left Boundary:** `1 → 2 → 4`
+- **Leaf Nodes:** `8, 9, 6, 7`
+- **Right Boundary (Reversed):** `3`
+- **Final Traversal:** `[1, 2, 4, 8, 9, 6, 7, 3]`
+
+---
+
+#### **Example 2:**
+
+**Input:**
+
+```
+root[] = [1, 2, N, 4, 9, 6, 5, N, 3, N, N, N, N, 7, 8]
+```
+
+**Tree Structure:**
+
+```
+        1
+       /
+      2
+     / \
+    4   9
+   /   / \
+  6   5   7
+           \
+            8
+```
+
+**Output:**
+
+```
+[1, 2, 4, 6, 5, 7, 8]
+```
+
+**Explanation:**
+
+- **Left Boundary:** `1 → 2 → 4`
+- **Leaf Nodes:** `6, 5, 7, 8`
+- **No Right Boundary** (Since no right subtree)
+- **Final Traversal:** `[1, 2, 4, 6, 5, 7, 8]`
+
+---
+
+#### **Example 3:**
+
+**Input:**
+
+```
+root[] = [1, N, 2, N, 3, N, 4, N, N]
+```
+
+**Tree Structure:**
+
+```
+    1
+     \
+      2
+       \
+        3
+         \
+          4
+```
+
+**Output:**
+
+```
+[1, 4, 3, 2]
+```
+
+**Explanation:**
+
+- **Left Boundary:** `1` (No left subtree)
+- **Leaf Nodes:** `4`
+- **Right Boundary (Reversed):** `3, 2`
+- **Final Traversal:** `[1, 4, 3, 2]`
+
+---
+
+### **Constraints:**
+
+- `1 ≤ number of nodes ≤ 10^5`
+- `1 ≤ node->data ≤ 10^5`
