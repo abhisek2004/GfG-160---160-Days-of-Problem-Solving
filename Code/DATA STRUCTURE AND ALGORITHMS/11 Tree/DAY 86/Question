@@ -1,0 +1,132 @@
+### **Maximum Path Sum from Any Node**
+
+**Difficulty:** Medium  
+**Accuracy:** 42.92%  
+**Submissions:** 92K+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+Given a **Binary Tree**, find the **maximum path sum** where:
+
+- The path **may start and end at any node** in the tree.
+- The path does **not necessarily need to pass through the root**.
+
+📌 **Path Sum Definition:**  
+The **path sum** of a path is the sum of all node values present in that path.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**
+
+```
+root[] = [10, 2, 10, 20, 1, N, -25, N, N, N, N, 3, 4]
+```
+
+**Tree Structure:**
+
+```
+        10
+       /  \
+      2    10
+     / \     \
+    20  1    -25
+              /  \
+             3    4
+```
+
+**Output:**
+
+```
+42
+```
+
+**Explanation:**  
+The maximum path sum is obtained from the path:  
+`20 → 2 → 10 → 10`  
+`Sum = 20 + 2 + 10 + 10 = 42`
+
+---
+
+#### **Example 2:**
+
+**Input:**
+
+```
+root[] = [-17, 11, 4, 20, -2, 10]
+```
+
+**Tree Structure:**
+
+```
+        -17
+       /    \
+      11     4
+     /  \      \
+    20  -2     10
+```
+
+**Output:**
+
+```
+31
+```
+
+**Explanation:**  
+The maximum path sum is obtained from the path:  
+`20 → 11 → -17 → 4 → 10`  
+`Sum = 20 + 11 + 4 + 10 = 31`
+
+---
+
+### **Constraints:**
+
+- `1 ≤ number of nodes ≤ 10^3`
+- `-10^4 ≤ node->data ≤ 10^4`
+
+---
+
+### **Approach:**
+
+1. **Use Recursion to Traverse the Tree:**
+
+   - At each node, calculate the **maximum path sum** that passes through that node.
+   - Maintain a global variable `maxSum` to track the highest sum encountered.
+
+2. **Recursive Function:**
+
+   - Compute **left** and **right** subtree maximum sum recursively.
+   - Find the **maximum path sum at the current node**, which can be:
+     1. The node itself.
+     2. The node plus the left subtree.
+     3. The node plus the right subtree.
+     4. The node plus both left and right subtrees (forming a complete path).
+   - Update `maxSum` if this new sum is greater.
+
+3. **Return Maximum Gain for Parent Nodes:**
+   - Return the max sum path that **includes the current node and at most one child** (left or right).
+   - This ensures valid paths are considered at higher levels.
+
+### **Time & Space Complexity Analysis:**
+
+- **Time Complexity:** `O(N)` (Since we traverse each node exactly once)
+- **Space Complexity:** `O(H)` (Recursive depth, `H` is the height of the tree, worst case `O(N)`)
+
+---
+
+### **Key Takeaways:**
+
+✔ Uses **postorder traversal** (Left → Right → Node).  
+✔ Tracks **global max sum** using a variable.  
+✔ Ignores **negative path sums** (to maximize sum).  
+✔ Returns the **best single-path sum** to parent nodes.
+
+---
+
+Would you like a dry run of the code for better understanding? 🚀
