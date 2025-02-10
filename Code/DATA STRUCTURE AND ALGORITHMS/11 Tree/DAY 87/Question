@@ -1,0 +1,111 @@
+### **K Sum Paths in a Binary Tree**
+
+**Difficulty:** Medium  
+**Accuracy:** 44.73%  
+**Submissions:** 109K+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+Given a **binary tree** and an **integer k**, determine the **number of downward-only paths** where:
+
+- The sum of node values in the path equals `k`.
+- A **path can start and end at any node** within the tree.
+- The path **must always move downward** (from **parent to child**).
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**
+
+```
+k = 7
+```
+
+**Output:**
+
+```
+3
+```
+
+**Explanation:**  
+The following **three paths** sum to `7`.
+
+---
+
+#### **Example 2:**
+
+**Input:**
+
+```
+k = 3
+Binary Tree:
+       1
+      / \
+     2   3
+```
+
+**Output:**
+
+```
+2
+```
+
+**Explanation:**
+
+- **Path 1:** `1 → 2` (Sum = `3`)
+- **Path 2:** `3` (Sum = `3`)
+
+---
+
+### **Constraints:**
+
+- `1 ≤ number of nodes ≤ 10^4`
+- `-100 ≤ node value ≤ 100`
+- `-10^9 ≤ k ≤ 10^9`
+
+---
+
+### **Approach:**
+
+1. **Use Prefix Sum Technique:**
+
+   - Maintain a **hash map (`prefixSum`)** to store the **frequency of cumulative sums** encountered in the path.
+   - This helps efficiently check if a valid path sum exists.
+
+2. **Recursive Traversal (DFS - Depth First Search):**
+   - Maintain a **running prefix sum** from the root to the current node.
+   - At each node:
+     - Check if a subpath exists such that the sum equals `k` using the formula:  
+       \[
+       \text{count} += \text{prefixSum}[ \text{currentSum} - k ]
+       \]
+     - Update `prefixSum` to include the current path sum.
+     - Recursively traverse **left** and **right** children.
+     - After recursion, **backtrack** to remove the contribution of the current node (important for other paths).
+
+### **Time & Space Complexity Analysis:**
+
+- **Time Complexity:** `O(N)`
+  - Each node is visited **once** during DFS traversal.
+- **Space Complexity:** `O(H)` (for recursion stack)
+  - In a **balanced tree**, `H ≈ log(N)`.
+  - In a **skewed tree**, `H = O(N)`.
+  - The `prefixSum` map stores at most `N` entries.
+
+---
+
+### **Key Takeaways:**
+
+✔ **Efficient Solution using Prefix Sum & Hash Map.**  
+✔ **Recursive DFS with backtracking to handle multiple paths.**  
+✔ **Avoids recalculating paths by utilizing cumulative sum approach.**
+
+---
+
+Would you like a dry run of the code for better understanding? 🚀
