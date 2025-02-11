@@ -97,3 +97,7 @@ if __name__ == "__main__":
         if Solution().isBST(root):
             print("true")
         else:
+            print("false")
+        print("~")
+
+# } Driver Code Ends
