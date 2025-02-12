@@ -1,0 +1,110 @@
+### **K-th Smallest Element in a BST**
+
+**Difficulty:** Medium  
+**Accuracy:** 43.53%  
+**Submissions:** 127K+  
+**Points:** 4
+
+---
+
+### **Problem Statement:**
+
+Given a **Binary Search Tree (BST)** and an integer `k`, find the **k-th smallest element** in the BST.
+
+- If there is **no k-th smallest element**, return `-1`.
+
+---
+
+### **Examples:**
+
+#### **Example 1:**
+
+**Input:**
+
+```
+root = [2, 1, 3], k = 2
+```
+
+**Output:**
+
+```
+2
+```
+
+**Explanation:**  
+The elements in sorted order are `[1, 2, 3]`, and the **2nd smallest** element is `2`.
+
+---
+
+#### **Example 2:**
+
+**Input:**
+
+```
+root = [2, 1, 3], k = 5
+```
+
+**Output:**
+
+```
+-1
+```
+
+**Explanation:**  
+There are only **3** elements in the BST, so the **5th smallest** element does not exist.
+
+---
+
+#### **Example 3:**
+
+**Input:**
+
+```
+root = [20, 8, 22, 4, 12, N, N, N, N, 10, 14], k = 3
+```
+
+**Output:**
+
+```
+10
+```
+
+**Explanation:**  
+The elements in sorted order are `[4, 8, 10, 12, 14, 20, 22]`, and the **3rd smallest** element is `10`.
+
+---
+
+### **Constraints:**
+
+- `1 ≤ number of nodes, k ≤ 10^5`
+- `1 ≤ node->data ≤ 10^5`
+
+---
+
+### **Approach:**
+
+1. **Use Inorder Traversal (Left → Root → Right)**
+
+   - Since it's a **BST**, an **inorder traversal** will give **elements in sorted order**.
+   - Keep a **counter** to track the `k-th` smallest element.
+   - Stop traversal once the `k-th` element is found.
+
+2. **Optimized Approach (Without Storing the Entire Inorder List)**
+   - Use **DFS (Depth First Search)** traversal recursively.
+   - Use a **counter (`count`)** to track the **k-th smallest element** dynamically.
+   - Stop early when we reach `k-th` element.
+
+### **Time & Space Complexity Analysis:**
+
+- **Time Complexity:** `O(H + k) ≈ O(k)` in a balanced BST, since we stop early.
+- **Space Complexity:** `O(H)` for recursion stack (worst-case `O(N)` for skewed tree, `O(log N)` for balanced BST).
+
+---
+
+### **Key Takeaways:**
+
+✔ **Efficient Inorder Traversal** to find the `k-th` smallest element.  
+✔ **Early stopping condition** to avoid unnecessary traversal.  
+✔ **Handles large constraints** (`10^5` nodes) with `O(k)` time complexity.
+
+---
