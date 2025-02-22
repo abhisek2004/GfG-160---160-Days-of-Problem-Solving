@@ -1,0 +1,73 @@
+### **Longest Valid Parentheses**
+
+**Difficulty:** Hard  
+**Accuracy:** 26.13%  
+**Submissions:** 144K+  
+**Points:** 8  
+**Average Time:** 20m
+
+Given a string `s` consisting of opening and closing parentheses `'('` and `')'`, find the length of the longest valid parentheses substring.
+
+A parenthesis string is valid if:
+
+1. For every opening parenthesis `'('`, there is a corresponding closing parenthesis `')'`.
+2. The closing parenthesis must appear after its corresponding opening parenthesis.
+
+### **Examples:**
+
+#### **Input 1:**
+
+```
+s = "((()"
+```
+
+#### **Output 1:**
+
+```
+2
+```
+
+#### **Explanation:**
+
+The longest valid parenthesis substring is `"()"`.
+
+---
+
+#### **Input 2:**
+
+```
+s = ")()())"
+```
+
+#### **Output 2:**
+
+```
+4
+```
+
+#### **Explanation:**
+
+The longest valid parenthesis substring is `"()()"`.
+
+---
+
+#### **Input 3:**
+
+```
+s = "())()"
+```
+
+#### **Output 3:**
+
+```
+2
+```
+
+#### **Explanation:**
+
+The longest valid parenthesis substring is `"()"`.
+
+### **Constraints:**
+
+- `1 ≤ s.size() ≤ 10^6`
+- `s` consists of `'('` and `')'` only.
