@@ -1,0 +1,69 @@
+### **Maximum of Minimum for Every Window Size**
+
+**Difficulty:** Hard  
+**Accuracy:** 42.9%  
+**Submissions:** 53K+  
+**Points:** 8
+
+#### **Problem Statement:**
+
+Given an array of integers `arr[]`, the task is to find the **maximum of the minimum values** for every possible window size in the array, where the window size ranges from `1` to `arr.size()`.
+
+More formally, for each window size `k`, determine the **smallest element** in **all windows of size `k`**, and then find the **largest value** among these minimums for `1 ≤ k ≤ arr.size()`.
+
+---
+
+### **Examples**
+
+#### **Example 1**
+
+##### **Input:**
+
+```
+arr[] = [10, 20, 30, 50, 10, 70, 30]
+```
+
+##### **Output:**
+
+```
+[70, 30, 20, 10, 10, 10, 10]
+```
+
+##### **Explanation:**
+
+1. **For window size = 1**, minimums in each window are `[10], [20], [30], [50], [10], [70], [30]` → **Max = 70**
+2. **For window size = 2**, minimums in each window are `[10], [20], [30], [10], [10], [30]` → **Max = 30**
+3. **For window size = 3**, minimums in each window are `[10], [20], [10], [10], [10]` → **Max = 20**
+4. **For window size = 4**, minimums in each window are `[10], [10], [10], [10]` → **Max = 10**
+5. **For window size = 5**, minimums in each window are `[10], [10], [10]` → **Max = 10**
+6. **For window size = 6**, minimums in each window are `[10], [10]` → **Max = 10**
+7. **For window size = 7**, minimums in each window are `[10]` → **Max = 10**
+
+---
+
+#### **Example 2**
+
+##### **Input:**
+
+```
+arr[] = [10, 20, 30]
+```
+
+##### **Output:**
+
+```
+[30, 20, 10]
+```
+
+##### **Explanation:**
+
+1. **For window size = 1**, minimums are `[10], [20], [30]` → **Max = 30**
+2. **For window size = 2**, minimums are `[10], [20]` → **Max = 20**
+3. **For window size = 3**, minimums are `[10]` → **Max = 10**
+
+---
+
+### **Constraints:**
+
+- `1 ≤ arr.size() ≤ 10^5`
+- `1 ≤ arr[i] ≤ 10^6`
