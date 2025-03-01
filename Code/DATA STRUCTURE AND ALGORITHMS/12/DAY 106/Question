@@ -1,0 +1,63 @@
+### 🔥 **Problem Summary - Decode the String**
+
+You are given an **encoded string** `s` that follows the format:
+
+```
+k[encoded_string]
+```
+
+- This means the `encoded_string` is repeated **k times**.
+- k is a **positive integer**.
+- You need to **decode the string** and return the **final decoded string**.
+- The length of the output string will never exceed **10^5**.
+
+---
+
+### 🔑 **Key Observations**
+
+- **Nested encoding is possible**, i.e., `3[b2[ca]]`.
+- This is a classic **stack-based decoding problem**.
+- When encountering `]`, you need to **pop the last encoded string and the repeat count from the stack** to construct the repeated string.
+
+---
+
+### ✅ **Approach - Using Stack**
+
+1. Use **two stacks**:
+
+   - One for the **count (k)** values.
+   - One for the **string so far** before each `[`.
+
+2. **Process the string character by character**:
+
+   - If you see a **number**, accumulate it to form the count.
+   - If you see `[`, push the current string and the count to their respective stacks.
+   - If you see `]`, pop from both stacks and **repeat the string inside the brackets k times**, then append to the previous string.
+   - Otherwise, just append regular characters.
+
+3. At the end, the stack should be empty and the **decoded string** will be the result.
+
+### 🔥 **Explanation**
+
+For `3[b2[ca]]`, the steps are:
+
+1. Process `b2[ca]` - decode `2[ca]` to `caca`.
+2. Now, `3[bcaca]` - decode to `bcacabcacabcaca`.
+
+---
+
+### ⏱️ **Time Complexity**
+
+- Each character is processed **at most once**.
+- Overall time: **O(n)**, where n = length of the string.
+
+### 🔲 **Space Complexity**
+
+- Stack size depends on nesting level.
+- Space: **O(n)** in the worst case.
+
+---
+
+### 🚀 **This is the optimal approach for this problem.**
+
+Let me know if you want me to explain or convert this to **C++/Java**!
